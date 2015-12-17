@@ -6,17 +6,40 @@
 }
 
 nav {
-  background-color: rgba(217, 217, 217, 0.5);
+  background-color: rgba(217, 217, 217, 0.7);
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 600;
 }
 
 ul {
   list-style-type: none;
 }
 
+.navbar-header > .nav > .nav-item {
+  margin-left: 20px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
 #nav-logo {
   max-height: 40px;
   float: left;
-  padding-top: 8px;
+  margin-top: 5px;
+  margin-right: 5px;
+  border-bottom-left-radius: 9px; 
+  border-bottom-right-radius: 9px;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+#logo {
+  border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 input[type=search] {
