@@ -1,7 +1,22 @@
 /* Stylesheet - initial commit */
 
+#page-container {
+  background-image: url("../images/snowy-streets-opaque.png");
+  background-repeat: no-repeat;
+}
+
+nav {
+  background-color: rgba(217, 217, 217, 0.5);
+}
+
 ul {
   list-style-type: none;
+}
+
+#nav-logo {
+  max-height: 40px;
+  float: left;
+  padding-top: 8px;
 }
 
 input[type=search] {
@@ -18,4 +33,9 @@ input[type=search] {
   overflow: scroll;
   font-size: 24px;
   margin-bottom: 100px;
+}
+
+.footer {
+  font-weight: 700;
+  padding: 10px;
 }
