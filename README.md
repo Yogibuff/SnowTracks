@@ -33,3 +33,8 @@ We love snow and want to help you find the best resorts, do quick vacation plann
                 vacation travel planners.
     Feature 3: user can click a link to additional information on ski resort facilities, pricing, and 
                 pictures beyond that provided from Google Maps API.
+
+
+
+
+>Testing git push
