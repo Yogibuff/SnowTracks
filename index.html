@@ -63,7 +63,7 @@
             <img src="images/california.jpg" alt="California"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">California</span>
+              <span class="locations_name">California</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -82,7 +82,7 @@
             <img src="images/colorado.jpg" alt="Colorado"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">Colorado</span>
+              <span class="locations_name">Colorado</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -100,7 +100,7 @@
             <img src="images/montana.jpg" alt="Montana"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">Montana</span>
+              <span class="locations_name">Montana</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -117,7 +117,7 @@
             <img src="images/new-mexico.jpg" alt="New Mexico"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">New Mexico</span>
+              <span class="locations_name">New Mexico</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -134,7 +134,7 @@
             <img src="images/utah.jpg" alt="Utah"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">Utah</span>
+              <span class="locations_name">Utah</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -153,7 +153,7 @@
             <img src="images/vermont.jpg" alt="Vermont"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
-              <span class="locations_link">Vermont</span>
+              <span class="locations_name">Vermont</span>
               <span class="locations_resorts">Powder Report</span>
             </span>
           </a>
@@ -189,38 +189,22 @@
   <script src="js/front-end.js" type="text/javascript"></script>
 
   <script type="text/javascript">
-            $(function() {
-        /**
-        * for each menu element, on mouseenter, 
-        * we enlarge the image, and show both locations_active span and 
-        * sdt_wrap span. If the element has a sub menu (sdt_box),
-        * then we slide it - if the element is the last one in the menu
-        * we slide it to the left, otherwise to the right
-        */
-                $('#locations_menu > li').bind('mouseenter',function(){
-          var $elem = $(this);
-          $elem.find('img')
-             .stop(true)
-             .animate({
-              'width':'170px',
-              'height':'170px',
-              'left':'0px'
-             },400,'easeOutBack')
-             .andSelf()
-             .find('.locations_wrap')
-               .stop(true)
-             .animate({'top':'140px'},500,'easeOutBack')
-             .andSelf()
-             .find('.locations_active')
-               .stop(true)
-             .animate({'height':'170px'},300,function(){
-            var $sub_menu = $elem.find('.locations_box');
-            if($sub_menu.length){
-              var left = '170px';
-              if($elem.parent().children().length == $elem.index()+1)
-                left = '-170px';
-              $sub_menu.show().animate({'left':left},200);
-            } 
+    $(function() {
+      $('#locations_menu > li').bind('mouseenter',function(){
+        var $elem = $(this);
+        $elem.find('img').stop(true).animate( {
+      'width':'170px',
+      'height':'170px',
+      'left':'0px'
+        }, 400, 'easeOutBack').andSelf().find('.locations_wrap').stop(true).animate( {
+        'top':'140px'},500,'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {'height':'170px'},300,function() {
+          var $sub_menu = $elem.find('.locations_box');
+          if($sub_menu.length){
+            var left = '170px';
+            if($elem.parent().children().length == $elem.index()+1)
+              left = '-170px';
+            $sub_menu.show().animate({'left':left},200);
+          } 
           });
         }).bind('mouseleave',function(){
           var $elem = $(this);
@@ -228,22 +212,17 @@
           if($sub_menu.length)
             $sub_menu.hide().css('left','0px');
           
-          $elem.find('.locations_active')
-             .stop(true)
-             .animate({'height':'0px'},300)
-             .andSelf().find('img')
-             .stop(true)
-             .animate({
-              'width':'0px',
-              'height':'0px',
-              'left':'85px'},400)
-             .andSelf()
-             .find('.locations_wrap')
-             .stop(true)
-             .animate({'top':'25px'},500);
+          $elem.find('.locations_active').stop(true).animate( {
+            'height':'0px'
+          }, 300).andSelf().find('img').stop(true).animate( {
+            'width':'0px',
+            'height':'0px',
+            'left':'85px'
+          }, 400).andSelf().find('.locations_wrap').stop(true).animate( {
+            'top':'25px'
+          },500);
         });
-            });
-        </script>
-
+    });
+  </script>
 </body>
 </html>

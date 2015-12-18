@@ -89,29 +89,29 @@ input[type=search] {
 
 /* BEGIN .Locations Dropdown Menu Styling */
 ul.locations_menu{
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   list-style: none;
   font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
-  font-size:16px;
-  width:1020px;
+  font-size: 16px;
+  width: 1020px;
   font-weight: 500;
 }
 
-ul.locations_menu a{
-  text-decoration:none;
-  outline:none;
+ul.locations_menu a {
+  text-decoration: none;
+  outline: none;
 }
 
-ul.locations_menu li{
-  float:left;
-  width:170px;
-  height:85px;
-  position:relative;
-  cursor:pointer;
+ul.locations_menu li {
+  float: left;
+  width: 170px;
+  height: 85px;
+  position: relative;
+  cursor: pointer;
 }
 
-ul.locations_menu li > a{
+ul.locations_menu li > a {
   position: absolute;
   top: 0;
   left: 0;
@@ -123,7 +123,7 @@ ul.locations_menu li > a{
   border-radius: 10px;
 }
 
-ul.locations_menu li a img{
+ul.locations_menu li a img {
   border: none;
   position: absolute;
   width: 0;
@@ -134,7 +134,7 @@ ul.locations_menu li a img{
   box-shadow: 0 0 4px #000000;
 }
 
-ul.locations_menu li span.locations_wrap{
+ul.locations_menu li span.locations_wrap {
   position: absolute;
   top: 25px;
   left: 0;
@@ -143,7 +143,7 @@ ul.locations_menu li span.locations_wrap{
   z-index: 3;
 }
 
-ul.locations_menu li span.locations_active{
+ul.locations_menu li span.locations_active {
   position: absolute;
   background: #111;
   top: 85px;
@@ -155,15 +155,15 @@ ul.locations_menu li span.locations_active{
 }
 
 /* the 6 State boxes */
-ul.locations_menu li span span.locations_link,
+ul.locations_menu li span span.locations_name,
 ul.locations_menu li span span.locations_resorts,
-ul.locations_menu li div.locations_box a{
+ul.locations_menu li div.locations_box a {
   margin-left: 15px;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px #000000;
 }
 
-ul.locations_menu li span span.locations_link{
+ul.locations_menu li span span.locations_name {
   color: #fff;
   font-size: 24px;
   padding-left: 10px;

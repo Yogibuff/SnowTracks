@@ -5,10 +5,12 @@
 
 
 // NEW #Locations-dropdown
+///* For each State, on mouseover enlarge the state's image, and show list of resorts */
 
 // Variable Key t: current time, b: begInnIng value, c: change In value, d: duration
-jQuery.easing['jswing'] = jQuery.easing['swing'];
 
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+//decided to use jswing over linear or swing, as jswing is slower & smoother animation on mouseover
 jQuery.extend( jQuery.easing,
 {
 	def: 'easeOutQuad',
