@@ -10,8 +10,10 @@ a:link, a:visited {
 }
 
 #page-container {
-  background-image: url("../images/snowy-streets-opaque.png");
+  /*background-image: url("../images/snowy-streets-opaque.png");*/
+   background-image: url("../images/snowy-mountains.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 nav {
@@ -160,7 +162,7 @@ ul.locations_menu li span span.locations_resorts,
 ul.locations_menu li div.locations_box a {
   margin-left: 15px;
   text-transform: uppercase;
-  text-shadow: 2px 2px 2px #000000;
+  text-shadow: 2px 2px 2px #000000, 1px 1px 1px #000000;
 }
 
 ul.locations_menu li span span.locations_name {
@@ -170,8 +172,9 @@ ul.locations_menu li span span.locations_name {
 }
 
 .resorts {
-  font-size: 18px;
-  color: aqua;
+  padding: 5px;
+  font-size: 16px;
+  color: whitesmoke;
   background-color: rgb(51, 51, 51);
 
 }
@@ -197,14 +200,14 @@ ul.locations_menu li div.locations_box{
   top: 85px;
   left: 0;
   display: none;
-  background: rgba(217, 217, 217, 0.5);
+  background: rgba(217, 217, 217, 0.7);
 }
 
 ul.locations_menu li div.locations_box a{
   float: left;
   clear: both;
   line-height: 30px;
-  color: #0B75AF;
+  color: whitesmoke;
   font-size: 16px;
 }
 
