@@ -4,7 +4,7 @@ var express = require( 'express' ),
   request = require( 'request' ),
   router = express.Router();
 
-// body-parser middlewear, to be used with SnowCountry API data
+// body-parser middlewear, to be used with SnowCountry API JSON returned data
 var bodyParser = require( 'body-parser' ),
   parseText = bodyParser.text();
 
@@ -35,6 +35,30 @@ router.post( '/', function( req, res ) {
 });
 
 module.exports = router;
+
+
+/* 
+
+router.post( '/', function( req, res ) {
+//SnoCountry API reqest URL format (goes on the end) http://feeds.snocountry.net/conditions.php?apiKey=SnowCountry.example&states=ca 
+
+var SnoCountryApi = URL: http://feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example
+request( SnoCountryApi, function( error, response, body ) {
+    // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
+    if ( !error && response.statusCode == 200 ) {
+      console.log( 'Success. Status code: ' + response.statusCode );
+      res.send( body );
+    }
+    else {
+      console.log(error);
+      console.log( 'Status code: ' + response.statusCode );
+    }
+  });
+});
+
+module.exports = router;
+
+*/
 
 
 //////////////  Promises Synchronous order of operations  //////////////
