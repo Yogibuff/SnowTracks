@@ -1,0 +1,25 @@
+{
+  "name": "snowtracks",
+  "version": "1.0.0",
+  "description": "We love snow and want to help you find the best resorts, do quick vacation planning, and track winter weather conditions!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Yogibuff@github.com/Yogibuff/SnowTracks.git"
+  },
+  "keywords": [],
+  "author": "jordanThimmig",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yogibuff/SnowTracks/issues"
+  },
+  "homepage": "https://github.com/Yogibuff/SnowTracks",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "nodemon": "^1.8.1"
+  }
+}
