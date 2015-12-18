@@ -71,8 +71,13 @@ into the 'center' property of the google Map initializing function */
 
   // var map;
   // function initMap() {
-  //   var x =  /* latitude.State  */ ;
-  //   var y =  /* longitude.State */ ;
+  //   var stateLocation = {lat: x, lng: y}
+  //   var colorado = {39.19110, -106.81754}
+  //   var california = {39.17852, -120.22769}
+  //   var newMexico = {36.39309, -105.28501}
+  //   var montana = {46.98927, -114.01456}
+  //   var vermont = {43.67757, -72.77982}
+  //   var utah = {40.58884, -111.63798}
   //   map = new google.maps.Map(document.getElementById('map'), {
   //     center: {lat: x, lng: y},
   //     zoom: 8
