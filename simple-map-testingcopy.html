@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Bootstrap and font-awesome library -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <!-- External CSS link -->
+  <link href="css/default.css" rel="stylesheet" type="text/css">
+  <title>Homepage of Project 2: SnowTracks</title>
+</head>
+<body>
+
+<!-- page container for css that applies to whole page, such as media queries -->
+  <div class="container-fluid" id="page-container">
+    
+<!-- BEGIN Navbar -->
+    <div class="navbar-wrapper">
+      <div class="container-fluid">
+        <nav class="navbar navbar-fixed-left">
+          <div class="container-fluid" id="nav-inner-container">
+            <div class="navbar-header navbar-collapse collapse">
+              <img id="nav-logo" src="images/logo-tiny.png">
+              <a class="navbar-brand" href="#">SnowTracks</a>
+              <ul class="nav navbar-nav">
+                <li class="nav-item active"><a href="index.html">Home</a></li>
+                <li class="nav-item toggle-sponsors"><a href="#">Sponsors</a></li>
+                <li class="nav-item toggle-about"><a href="#">About Us</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
+              </ul>
+            </div> <!-- close .navbar-header -->
+          </div> <!-- close .container-fluid  #nav-inner-container-->
+        </nav> <!-- close .navbar-fixed-top -->
+      </div> <!-- close .container-fluid -->
+    </div> <!-- close .navbar-wrapper -->
+<!-- END Navbar -->
+
+    <div class="header middle-content">
+      <div class="container">
+        <div id="map">
+          <script type="text/javascript">
+            function initMap() {
+              var map;
+              map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 39.19110, lng: -106.81754},
+                zoom: 8
+              });
+            }
+          </script>
+        </div>
+        <!-- <div class="jumbotron text-center">
+          <h1 id="site-name"><img src="images/logo-tiny.png" id="logo"> 
+          SnowTracks</h1>
+          <h4>We love snow and want to help you find the best resorts,</h4>
+          <h4>do quick vacation planning, and track winter weather conditions!</h4>
+          <br>
+          <p>It's a mashup of Google Maps API with SnoCountry API in a single-page website for winter sports enthusiasts and vacation travel planners who want to quickly view the snow conditions with a map of relevent activities and resort facilities in a given location.</p>
+        </div> -->
+      </div> <!-- close .container -->
+    </div> <!-- close .header -->
+<!-- Search field for Google Maps API backend -->
+<!-- OLD Search <input class="text-center query" id="searchField" type="search" name="Returns Google Map" placeholder="type a location!"> -->
+
+<!-- NEW Dropdown of Top Locations & Resorts -->
+    <div class="container" id="locations-dropdown">
+      <ul id="locations_menu" class="locations_menu">
+        <li>
+          <a href="#">
+            <img src="images/california.jpg" alt="California"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">California</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Heavenly</a>
+              <a href="#">Alpine Meadows</a>
+              <a href="#">Squaw Valley</a>
+              <a href="#">Mammoth</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/colorado.jpg" alt="Colorado"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">Colorado</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Vail</a>
+              <a href="#">Telluride</a>
+              <a href="#">Keystone</a>
+              <a href="#">Breckenridge</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/montana.jpg" alt="Montana"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">Montana</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Big Sky</a>
+              <a href="#">Bridger Bowl</a>
+              <a href="#">Whitefish</a>
+              <a href="#">Snowbowl</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/new-mexico.jpg" alt="New Mexico"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">New Mexico</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Taos Ski Valley</a>
+              <a href="#">Apache</a>
+              <a href="#">Pajarito</a>
+              <a href="#">Angel Fire</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/utah.jpg" alt="Utah"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">Utah</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Alta</a>
+              <a href="#">Solitude</a>
+              <a href="#">Park City</a>
+              <a href="#">Snowbird</a>
+          </div>
+        </li>
+        <li>
+          <a href="#">
+            <img src="images/vermont.jpg" alt="Vermont"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">Vermont</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+              <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+              <a href="#">Killington</a>
+              <a href="#">Jay Peak</a>
+              <a href="#">Smugglers' Notch</a>
+              <a href="#">Stratton</a>
+          </div>
+        </li>
+      </ul>
+    </div> <!-- close .container #locations-dropdown -->
+    <br><br><br>
+
+    <div class="container" id="sponsors"> <!-- close #sponsors (given css class 'hidden' until nav button click event, displaying this div i.e. the sponsor images) -->
+    </div>
+
+    <br><br><br><br><br> <!-- temporararily creating space so that locations_box fits without scrolling -->
+
+  </div> <!-- close .container-fluid #page-container -->
+
+<!-- footer includes links to Terms of Use, Privacy Policy, back to top link, and logo with brand name -->
+  <div class="footer">
+    <p class="pull-right" id="footer-top-link"><a href="#top">Back to Top</a></p>
+    <p class="pull-left" id="footer-left">&copy; 2015 SnowTracks, LLC. &middot; <a href="privacypolicy.html">Privacy</a> &middot; <a href="terms.html">Terms of Use</a></p>
+  </div> <!-- close .footer -->
+  
+<!-- Google Maps API link -->
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=initMap" async defer></script>
+<!-- Javascript links [best practice to skip JQuery ready() handler!] -->
+  <script src="js/app.js" type="text/javascript"></script>
+<!-- front-end javascript and jQuery -->
+  <script src="js/front-end.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#locations_menu > li').bind('mouseenter',function(){
+        var $elem = $(this);
+        $elem.find('img').stop(true).animate( {
+      'width':'170px',
+      'height':'170px',
+      'left':'0px'
+        }, 400, 'easeOutBack').andSelf().find('.locations_wrap').stop(true).animate( {
+        'top':'140px'},500,'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {'height':'170px'},300,function() {
+          var $sub_menu = $elem.find('.locations_box');
+          if($sub_menu.length){
+            var left = '170px';
+            if($elem.parent().children().length == $elem.index()+1)
+              left = '-170px';
+            $sub_menu.show().animate({'left':left},200);
+          } 
+          });
+        }).bind('mouseleave',function(){
+          var $elem = $(this);
+          var $sub_menu = $elem.find('.locations_box');
+          if($sub_menu.length)
+            $sub_menu.hide().css('left','0px');
+          
+          $elem.find('.locations_active').stop(true).animate( {
+            'height':'0px'
+          }, 300).andSelf().find('img').stop(true).animate( {
+            'width':'0px',
+            'height':'0px',
+            'left':'85px'
+          }, 400).andSelf().find('.locations_wrap').stop(true).animate( {
+            'top':'25px'
+          },500);
+        });
+    });
+  </script>
+</body>
+</html>
