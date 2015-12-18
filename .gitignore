@@ -29,7 +29,5 @@ node_modules
 # DS Store
 .DS_Store
 
-#OLD index.html
-original-index.html
-Fancyindex.html
-Fancyindex2.html
+#unused files folder
+unused-files/
