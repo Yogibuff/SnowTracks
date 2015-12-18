@@ -44,6 +44,7 @@ ul {
   border-bottom-right-radius: 9px;
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
+  opacity: 0.9;
 }
 
 #logo {
@@ -51,6 +52,8 @@ ul {
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  opacity: 0.85;
+  margin-bottom: 14px;
 }
 
 .jumbotron {
