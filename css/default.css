@@ -1,5 +1,14 @@
 /* Stylesheet - initial commit */
 
+* {
+    font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+}
+
+/* remove link visited color */
+a:link, a:visited {
+  text-decoration: none;
+}
+
 #page-container {
   background-image: url("../images/snowy-streets-opaque.png");
   background-repeat: no-repeat;
@@ -42,6 +51,25 @@ ul {
   border-top-right-radius: 20px;
 }
 
+.jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.jumbotron > h1 {
+  text-shadow: 3px 2px #CCC, 1px 0px 1px #CCC, 0px 1px 1px #190D0D, 
+  2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 
+  2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
+}
+
+.jumbotron > h4 {
+  text-shadow: 2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 
+  2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
+}
+
+
+/* ///////SEARCH FIELD REMOVED FOR DROPDOWN MENU////////
 input[type=search] {
   border: 2px dotted #999;
   border-radius: 15px;
@@ -57,6 +85,139 @@ input[type=search] {
   font-size: 24px;
   margin-bottom: 100px;
 }
+*/
+
+/* BEGIN .Locations Dropdown Menu Styling */
+ul.locations_menu{
+  margin:0;
+  padding:0;
+  list-style: none;
+  font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+  font-size:16px;
+  width:1020px;
+  font-weight: 500;
+}
+
+ul.locations_menu a{
+  text-decoration:none;
+  outline:none;
+}
+
+ul.locations_menu li{
+  float:left;
+  width:170px;
+  height:85px;
+  position:relative;
+  cursor:pointer;
+}
+
+ul.locations_menu li > a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 170px;
+  height: 85px;
+  z-index: 1;
+  background: rgba(217, 217, 217, 0.6);
+  box-shadow: 0 0 90px #000000 inset;
+  border-radius: 10px;
+}
+
+ul.locations_menu li a img{
+  border: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 85px;
+  z-index: 10;
+  box-shadow: 0 0 4px #000000;
+}
+
+ul.locations_menu li span.locations_wrap{
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 170px;
+  height: 60px;
+  z-index: 3;
+}
+
+ul.locations_menu li span.locations_active{
+  position: absolute;
+  background: #111;
+  top: 85px;
+  width: 170px;
+  height: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 0 4px #000000 inset;
+}
+
+/* the 6 State boxes */
+ul.locations_menu li span span.locations_link,
+ul.locations_menu li span span.locations_resorts,
+ul.locations_menu li div.locations_box a{
+  margin-left: 15px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000000;
+}
+
+ul.locations_menu li span span.locations_link{
+  color: #fff;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.resorts {
+  font-size: 18px;
+  color: aqua;
+  background-color: rgb(51, 51, 51);
+
+}
+
+div > #locations-dropdown.container {
+  margin-left: 5%;
+}
+
+ul.locations_menu li span span.locations_resorts{
+  color: #0B75AF;
+  float: left;
+  clear: both;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+ul.locations_menu li div.locations_box{
+  display: block;
+  position: absolute;
+  width: 170px;
+  overflow: hidden;
+  height: 170px;
+  top: 85px;
+  left: 0;
+  display: none;
+  background: rgba(217, 217, 217, 0.5);
+}
+
+ul.locations_menu li div.locations_box a{
+  float: left;
+  clear: both;
+  line-height: 30px;
+  color: #0B75AF;
+  font-size: 16px;
+}
+
+ul.locations_menu li div.locations_box a:first-child{
+  margin-top: 15px;
+}
+
+ul.locations_menu li div.locations_box a:hover{
+  color: #fff;
+}
+
+/* END .Locations Dropdown Menu Styling*/
+
 
 .footer {
   font-weight: 700;
