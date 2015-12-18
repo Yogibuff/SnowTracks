@@ -4,12 +4,12 @@ var express = require( 'express' ),
   request = require( 'request' ),
   router = express.Router();
 
-// body-parser middlewear
+// body-parser middlewear, to be used with SnowCountry API data
 var bodyParser = require( 'body-parser' ),
   parseText = bodyParser.text();
 
 // Add a route for POST, with status codes (including success 200 code) logged to the console
-router.post( '/', parseText, function( req, res ) {
+router.post( '/', function( req, res ) {
   //"http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"
   var baseUrl = 'http://maps.googleapis.com/maps/api/js?';
   var apiKey = 'AIzaSyCbgb6h0fxgC-2HjRmh6YlLnLiCC0edouw';
@@ -56,7 +56,8 @@ into the 'center' property of the google Map initializing function */
   // }
 
 // FIRST Promise takes user input and matches it to a latitude / longitude value pair, 
-//    Alternate: having a list of preset states (UT, CO, CA, VT, MT, NM) with stored lat/long data that gets plugged in to init map function 
-// THEN pass this lat/long data into the function initMap() 'center' property
-// THEN request Google Maps API and post to the DOM
+//    Alternate (will be using): having a list of preset states (UT, CO, CA, VT, MT, NM) with stored lat/long data 
+//                               which is stored in variables and gets plugged in to init map function.
+// THEN pass the latitude/longitude data into the function initMap() 'center' property, creating a map of that state.
+// THEN send request Google Maps API and post results into the DOM, replacing the middle section jumbotron & text.
 // THEN request SnowCountry.com Snow Reports (left side of their website: #ski areas open, #areas with new snow, Biggest Snowfalls...) 
