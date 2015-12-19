@@ -224,6 +224,12 @@ ul.locations_menu li div.locations_box a:hover{
 
 /* END .Locations Dropdown Menu Styling*/
 
+#map {
+  height: 500px;
+  width: 50%;
+  margin: auto auto;
+}
+
 
 .footer {
   font-weight: 700;
