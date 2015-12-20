@@ -28,9 +28,9 @@
               <a class="navbar-brand" href="#">SnowTracks</a>
               <ul class="nav navbar-nav">
                 <li class="nav-item active"><a href="index.html">Home</a></li>
-                <li class="nav-item toggle-sponsors"><a href="#">Sponsors</a></li>
-                <li class="nav-item toggle-about"><a href="#">About Us</a></li>
-                <li class="nav-item"><a href="#">Contact</a></li>
+                <li class="nav-item toggle-about-page"><a href="about-us.html">About Us</a></li>
+                <li class="nav-item toggle-sponsors-page"><a href="#">Sponsors</a></li>
+                <li class="nav-item toggle-contact-page"><a href="#">Contact</a></li>
               </ul>
             </div> <!-- close .navbar-header -->
           </div> <!-- close .container-fluid  #nav-inner-container-->
@@ -40,8 +40,8 @@
 <!-- END Navbar -->
 
     <div class="header middle-content">
-      <div class="container">
-        <div id="map"><script src="js/map.js"></script></div>
+      <div class="container" id="map-container">
+        <div id="map"><script src="js/map.js"></script></div>  <!-- will make this an added element using append child #map-container -->
         <!-- <div class="jumbotron text-center">
           <h1 id="site-name"><img src="images/logo-tiny.png" id="logo"> 
           SnowTracks</h1>
