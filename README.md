@@ -1,7 +1,7 @@
 # SnowTracks
 We love snow and want to help you find the best resorts, do quick vacation planning, and track winter weather conditions!
 
-<img src="images/snowy-mountains.jpg">
+<img src="images/snowtracks-homepage-demo.png">
 
 ###**Initial Plans for this App** 
 **It's a** mashup of Google Maps API with SnoCountry API in a single-page website **for** winter sports enthusiasts and vacation travel planners 
