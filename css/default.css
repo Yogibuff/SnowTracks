@@ -57,12 +57,16 @@ ul {
 }
 
 .jumbotron {
-  padding-top: 20px;
-  padding-bottom: 20px;
-
+  max-width: 1100px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  border-radius: 10px  !important;
+  z-index: 2;
+  margin-bottom: 5px !important;
 }
 
 .jumbotron > h1 {
+  margin-top: 0px;
   text-shadow: 3px 2px #CCC, 1px 0px 1px #CCC, 0px 1px 1px #190D0D, 
   2px 1px 1px #ccc, 1px 2px 1px #eee, 3px 2px 1px #ccc, 
   2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
@@ -75,12 +79,23 @@ ul {
 
 .middle-content {
   min-width: 80%;
-  min-height: 400px;
-  margin-bottom: 50px;
+  min-height: 350px;
+  margin-bottom: 40px;
 }
 
 #map {
-  display: hidden;
+  position: absolute;
+  top: 60px;
+  left: 7%;
+  right: 7%;
+  max-width: 1000px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  height: 500px;
+  width: 50%;
+  margin: auto auto;
+  z-index: 1;
 }
 
 /* BEGIN .Locations Dropdown Menu Styling */
@@ -214,12 +229,6 @@ ul.locations_menu li div.locations_box a:hover{
 }
 
 /* END .Locations Dropdown Menu Styling*/
-
-#map {
-  height: 500px;
-  width: 50%;
-  margin: auto auto;
-}
 
 
 .footer {

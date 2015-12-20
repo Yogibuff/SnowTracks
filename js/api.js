@@ -9,32 +9,32 @@ var bodyParser = require( 'body-parser' ),
   parseText = bodyParser.text();
 
 // Add a route for POST, with status codes (including success 200 code) logged to the console
-router.post( '/', function( req, res ) {
-  //"http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"
-  var baseUrl = 'http://maps.googleapis.com/maps/api/js?';
-  var apiKey = 'AIzaSyCbgb6h0fxgC-2HjRmh6YlLnLiCC0edouw';
-  var additionalParameters = '&signed_in=true&libraries=places&callback=initMap';
-  /* additonal Parameters are If they're signed in with their Google account, their saved places, 
-  home and work locations, and more are built right into the map they see. This also means that 
-  interactions with the map, such as starring a location, are saved for easy viewing in Google Maps 
-  for desktop or mobile, and any other Google Map that the user visits on the web. */
+// router.post( '/', function( req, res ) {
+//   //"http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"
+//   var baseUrl = 'http://maps.googleapis.com/maps/api/js?';
+//   var apiKey = 'AIzaSyCbgb6h0fxgC-2HjRmh6YlLnLiCC0edouw';
+//   var additionalParameters = '&signed_in=true&libraries=places&callback=initMap';
+//    /*additonal Parameters are If they're signed in with their Google account, their saved places, 
+//   home and work locations, and more are built right into the map they see. This also means that 
+//   interactions with the map, such as starring a location, are saved for easy viewing in Google Maps 
+//   for desktop or mobile, and any other Google Map that the user visits on the web. */ 
 
-  var queryURL = baseUrl + /* req.body + */ 'key=' + apiKey + additionalParameters;
+//   var queryURL = baseUrl + /* req.body + */ 'key=' + apiKey + additionalParameters;
 
-  request( queryURL, function( error, response, body ) {
-    // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
-    if ( !error && response.statusCode == 200 ) {
-      console.log( 'Success. Status code: ' + response.statusCode );
-      res.send( body );
-    }
-    else {
-      console.log(error);
-      console.log( 'Status code: ' + response.statusCode );
-    }
-  });
-});
+//   request( queryURL, function( error, response, body ) {
+//     // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
+//     if ( !error && response.statusCode == 200 ) {
+//       console.log( 'Success. Status code: ' + response.statusCode );
+//       res.send( body );
+//     }
+//     else {
+//       console.log(error);
+//       console.log( 'Status code: ' + response.statusCode );
+//     }
+//   });
+// });
 
-module.exports = router;
+// module.exports = router;
 
 
 /* 
