@@ -1,11 +1,7 @@
 /* Front-end Javascript and JQuery */
 
-// OLD #SearchField initially hides the search bar, will animate into place from left to center.
-// $('#searchField').hide().show('slow');
-
-
-// NEW #Locations-dropdown
-///* For each State, on mouseover enlarge the state's image, and show list of resorts */
+// #Locations-dropdown, and other various animations to potentially use
+/* For each State, on mouseover enlarge the state's image, and show list of resorts */
 
 // Variable Key t: current time, b: begInnIng value, c: change In value, d: duration
 
@@ -143,6 +139,3 @@ jQuery.extend( jQuery.easing,
 		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * 0.5 + c * 0.5 + b;
 	}
 });
-
-
-//Create a map object and specify the DOM element for display

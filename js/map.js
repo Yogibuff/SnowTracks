@@ -33,7 +33,7 @@ onclick {
 function eventListeners(locations) {
   var states = getElementByClassName("states");
   
-  for (var i = 0; i < states.length; i++) {
+  for (var i = 0; i < 6; i++) {
     var elId = locations[i];
     var el = document.getElementById(elId);
     el.addEventListner('click', function(e) {

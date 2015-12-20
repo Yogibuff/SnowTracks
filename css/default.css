@@ -73,27 +73,18 @@ ul {
   2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
 }
 
-
-/* ///////SEARCH FIELD REMOVED FOR DROPDOWN MENU////////
-input[type=search] {
-  border: 2px dotted #999;
-  border-radius: 15px;
+.middle-content {
+  min-width: 80%;
+  min-height: 400px;
+  margin-bottom: 50px;
 }
 
-#searchField {
-  position: relative;
-  display: inline-block;
-  margin-left: 35%;
-  margin-right: 35%;
-  width: 400px;
-  overflow: scroll;
-  font-size: 24px;
-  margin-bottom: 100px;
+#map {
+  display: hidden;
 }
-*/
 
 /* BEGIN .Locations Dropdown Menu Styling */
-ul.locations_menu{
+ul.locations_menu {
   margin: 0;
   padding: 0;
   list-style: none;
