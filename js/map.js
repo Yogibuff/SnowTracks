@@ -1,31 +1,128 @@
-// apply listener for click event to whole li
+///////////////////////////////////////////////////////////////////////////
+/*   GoogleMap - Initializing Functions & DOM Event Listeners for each State   */
+///////////////////////////////////////////////////////////////////////////
+
+// Create Google Map, placed within div #map, inside of the parent div .map-container
+function initMap() {
+
+  // Create an array of styles to apply to the Map, clearing roads and other labels
+  var styles = [
+    {
+      stylers: [
+        { hue: "#00ffe6" },
+        { saturation: -20 }
+      ]
+    },{
+      featureType: "road",
+      elementType: "geometry",
+      stylers: [
+        { lightness: 100 },
+        { visibility: "simplified" }
+      ]
+    },{
+      featureType: "road",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
+    }
+  ];
+
+  // Create a new StyledMapType object, passing it the array of styles
+  var styledMap = new google.maps.StyledMapType(styles,
+    {name: "SnowTracks"});
+
+  var mapOptions = {
+    zoom: 6,
+    // default center: Aspen, Colorado
+    center: new google.maps.LatLng(39.19110,-106.81754),
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+    }
+  };
+  
+  var map = new google.maps.Map(document.getElementById('map'),
+    mapOptions);
+
+  //Associate the styled map with the MapTypeId and set it to display.
+  map.mapTypes.set('map_style', styledMap);
+  map.setMapTypeId('map_style');
+}
+
+
+///////////////////////////////////////////////////////
+/* Google Map changes 'center' based on State Selected */
+///////////////////////////////////////////////////////
+
+// plugs in new latitude, longitude array
+function newLocation(newLat,newLng) {
+  map.setCenter( {
+    lat : newLat,
+    lng : newLng
+  });
+}
+
+// BEGIN on'click' listners for each State's id
+google.maps.event.addDomListener(window, 'load', initMap);
+
+$(document.body).ready(function () {
+  $("#california").on('click', function () {
+    newLocation(39.17852,-120.22769);
+  });
+  $("#colorado").on('click', function () {
+    newLocation(39.19110,-106.81754);
+  });
+  $("#montana").on('click', function () {
+    newLocation(46.98927,-114.01456);
+  });
+  $("#new-mexico").on('click', function () {
+    newLocation(36.39309,-105.28501);
+  });
+  $("#utah").on('click', function () {
+    newLocation(40.58884,-111.63798);
+  });
+  $("#vermont").on('click', function () {
+    newLocation(43.67757,-72.77982);
+  });
+  $("#reset-map").on('click', function () {
+    newLocation(39.19110,-106.81754);
+  });
+});
+
+
+///////////////////////////////////////////////////////////////////////////
+
+/* OPTION 2: apply listener for click event to each State's li (list item) 
+    ~too complex and long, going to use option 1!
+*/
+
 // $(".states").on('click', 'li', function(e) {
 //    console.log($(this).attr("class"));
 // });
 
 
 // onclick events trigger location lat lng values send to initMap function
-// $(".california").on('click', function(e) {
+// $("#california").on('click', function(e) {
 //       userLocation = 'california';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // });
-// onclick {
+// $("#colorado").on('click', function(e) {
 //       userLocation = 'colorado';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // };
-// onclick {
+// $("#montana").on('click', function(e) {
 //       userLocation = 'montana';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // };
-// onclick {
+// $("#new-mexico").on('click', function(e) {
 //       userLocation = 'newMexico';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // };
-// onclick {
+// $("#utah").on('click', function(e) {
 //       userLocation = 'utah';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // };
-// onclick {
+// $("#vermont").on('click', function(e) {
 //       userLocation = 'vermont';
 //       mapCenterOn(locations[userLocation].lat, locations[userLocation].lng);
 // };
@@ -53,66 +150,46 @@
 //             lat: 39.17852,
 //             lng: -120.22769
 //       },
-//       newMexico: {
-//             lat: 36.39309,
-//             lng: -105.28501
-//       },
 //       montana: {
 //             lat: 46.98927,
 //             lng: -114.01456
 //       },
-//       vermont: 43.67757,
-//             lng: -72.77982
+//       newMexico: {
+//             lat: 36.39309,
+//             lng: -105.28501
 //       },
-//       utah: 40.58884,
+//       utah: 
+//             lat: 40.58884,
 //             lng: -111.63798
 //       };
+//       vermont: 
+//             lat: 43.67757,
+//             lng: -72.77982
+//       },
 // };
 
 
-function initMap() {
+// Option 3: ALTERNATE WITHOUT JQUERY - add this for each state after initializeMap function
+/* alternate map initializer function without styles */
 
-            // Create an array of styles to apply to the Map, clearing roads and other labels
-            var styles = [
-              {
-                stylers: [
-                  { hue: "#00ffe6" },
-                  { saturation: -20 }
-                ]
-              },{
-                featureType: "road",
-                elementType: "geometry",
-                stylers: [
-                  { lightness: 100 },
-                  { visibility: "simplified" }
-                ]
-              },{
-                featureType: "road",
-                elementType: "labels",
-                stylers: [
-                  { visibility: "off" }
-                ]
-              }
-            ];
+// var map;
+// function initializeMap() {
+//   map = new google.maps.Map(document.getElementById('map'), {
+//     // default center Aspen, Colorado
+//     center: new google.maps.LatLng(39.19110,-106.81754),
+//     zoom: 6
+//   });
+// }
+// function newLocation(newLat,newLng) {
+//   map.setCenter({
+//     lat : newLat,
+//     lng : newLng
+//   });
+// }
+// google.maps.event.addDomListener(window, 'load', initialize);
 
-            // Create a new StyledMapType object, passing it the array of styles,
-            // as well as the name to be displayed on the map type control.
-            var styledMap = new google.maps.StyledMapType(styles,
-              {name: "Styled Map"});
+// OR
 
-            var mapOptions = {
-              zoom: 5,
-              //add when State event listeners are fuctional, to pass in their values
-              // center: new google.maps.LatLng(locations),
-              center: new google.maps.LatLng(39.19110, -106.81754),  //temporary to view the map
-              mapTypeControlOptions: {
-                mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-              }
-            };
-            var map = new google.maps.Map(document.getElementById('map'),
-              mapOptions);
-
-            //Associate the styled map with the MapTypeId and set it to display.
-            map.mapTypes.set('map_style', styledMap);
-            map.setMapTypeId('map_style');
-          }
+// google.maps.event.addDomListener(document.getElementById('colorado'), 'click', function () {
+//     map.setCenter(new google.maps.LatLng(39.19110,-106.81754));
+// });

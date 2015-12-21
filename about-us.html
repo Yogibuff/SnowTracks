@@ -28,7 +28,7 @@
               <a class="navbar-brand" href="#">SnowTracks</a>
               <ul class="nav navbar-nav">
                 <li class="nav-item active"><a href="index.html">Home</a></li>
-                <li class="nav-item toggle-map-page"><a href="map-testing.html">GoogleMap</a></li>
+                <li class="nav-item toggle-map-page" id="reset-map"><a href="map-working.html">GoogleMap</a></li>
                 <li class="nav-item toggle-sponsors-page"><a href="#">Sponsors</a></li>
                 <li class="nav-item toggle-contact-page"><a href="#">Contact</a></li>
               </ul>
@@ -57,9 +57,9 @@
 
   <!-- NEW Dropdown of Top Locations & Resorts -->
     <div class="container" id="locations-dropdown">
-      <ul id="locations_menu" class="locations_menu">
-        <li>
-          <a href="#">
+      <ul id="locations_menu" class="locations_menu"> <!-- both needed for animation to function -->
+        <li class="states california" id="california">
+          <a>
             <img src="images/california.jpg" alt="California"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -75,8 +75,8 @@
               <a href="#">Mammoth</a>
           </div>
         </li>
-        <li>
-          <a href="#">
+        <li class="states colorado" id="colorado">
+          <a>
             <img src="images/colorado.jpg" alt="Colorado"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -92,8 +92,8 @@
               <a href="#">Breckenridge</a>
           </div>
         </li>
-        <li>
-          <a href="#">
+        <li class="states" id="montana">
+          <a>
             <img src="images/montana.jpg" alt="Montana"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -109,8 +109,8 @@
               <a href="#">Snowbowl</a>
           </div>
         </li>
-        <li>
-          <a href="#">
+        <li class="states" id="newMexico">
+          <a>
             <img src="images/new-mexico.jpg" alt="New Mexico"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -126,8 +126,8 @@
               <a href="#">Angel Fire</a>
           </div>
         </li>
-        <li>
-          <a href="#">
+        <li class="states" id="utah">
+          <a>
             <img src="images/utah.jpg" alt="Utah"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -143,8 +143,8 @@
               <a href="#">Snowbird</a>
           </div>
         </li>
-        <li>
-          <a href="#">
+        <li class="states" id="vermont">
+          <a>
             <img src="images/vermont.jpg" alt="Vermont"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
