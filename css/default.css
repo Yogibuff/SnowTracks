@@ -21,7 +21,8 @@ a:link, a:visited {
 }
 
 nav {
-  background-color: rgba(217, 217, 217, 0.7);
+  background-color: rgba(217, 217, 217, 0.6);
+  text-shadow: 1px 3px 5px white;
 }
 
 .navbar-brand {
@@ -67,6 +68,7 @@ ul {
   border-radius: 10px  !important;
   z-index: 2;
   margin-bottom: 5px !important;
+  background-color: rgba(217, 217, 217, 0.85);
 }
 
 .jumbotron > h1 {
@@ -81,10 +83,23 @@ ul {
   2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
 }
 
-#about-list{
+#about-list {
   text-align: left;
-  list-style-type: upper-roman;
-  margin-left:230px;
+  list-style-type: circle;
+  margin-left: 200px;
+  letter-spacing: 1.6px;
+}
+
+#homepage-list {
+  text-align: left;
+  margin-left: 120px;
+  margin-right: 100px;
+  list-style-type: circle;
+}
+
+.welcome-text {
+  line-height: 34px;
+  font-size: 18px;
 }
 
 #content-split {
