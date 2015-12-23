@@ -33,31 +33,3 @@ $(document.body).ready(function () {
   });
   
 });
-
-
-
-////////////////////////////////////////////////
-<!--      // Navbar Event Listeners //       -->
-////////////////////////////////////////////////
-
-// home button hides #map , shows div.jumbotron
-$(".toggle-home").on('click', function () {
-  $('#map').css('opacity', '0');
-  $('.jumbotron').css('display', 'visible');
-});
-
-// when document loaded, if jumbotron is visible, hides map
-// $(document.body).ready(function () {
-//   if($('.jumbotron').is(':visible')) {
-//     $('#map').css('display', 'none');
-//   }
-//   else('.jumbotron').css('display', 'hidden');
-// });
-
-// hides jumbotron if map is visible, shows jumbotron otherwise
-// if($('#map').is(':visible')) {
-//   $('.jumbotron').css('display', 'none');
-// }
-// else($('.jumbotron').css(':visible'));
-
-// resort links hides #map, hides div.jumbotron
