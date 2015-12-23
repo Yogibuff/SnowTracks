@@ -1,10 +1,14 @@
 /* Stylesheet - initial commit */
 
 * {
-    font-family:"Myriad Pro", "Trebuchet MS", sans-serif;
+    font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
 }
 
-/* remove link visited color */
+h4 {
+  font-family: "Della Respira";
+}
+
+/* remove hyperlink-visited color */
 a:link, a:visited {
   text-decoration: none;
 }
@@ -83,6 +87,15 @@ ul {
   margin-left:230px;
 }
 
+#content-split {
+  max-width: 52%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top-width: 2.5px;
+  border-top-color: #d5d5d5;
+  border-top-style: solid;
+}
+
 .middle-content {
   min-width: 80%;
   min-height: 350px;
@@ -103,6 +116,12 @@ ul {
   margin: auto auto;
   z-index: 1;
 }
+
+/* on 'click' event sets #map's opacity: 0 */
+#remove-map {
+  cursor: pointer;
+}
+
 
 /* BEGIN .Locations Dropdown Menu Styling */
 ul.locations_menu {
@@ -151,6 +170,12 @@ ul.locations_menu li a img {
   box-shadow: 0 0 4px #000000;
 }
 
+ul.locations_menu li span span.locations_name {
+  color: #fff;
+  font-size: 24px;
+  padding-left: 10px;
+}
+
 ul.locations_menu li span.locations_wrap {
   position: absolute;
   top: 25px;
@@ -169,33 +194,6 @@ ul.locations_menu li span.locations_active {
   left: 0;
   z-index: 2;
   box-shadow: 0 0 4px #000000 inset;
-}
-
-/* the 6 State boxes */
-ul.locations_menu li span span.locations_name,
-ul.locations_menu li span span.locations_resorts,
-ul.locations_menu li div.locations_box a {
-  margin-left: 15px;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 2px #000000, 1px 1px 1px #000000;
-}
-
-ul.locations_menu li span span.locations_name {
-  color: #fff;
-  font-size: 24px;
-  padding-left: 10px;
-}
-
-.resorts {
-  padding: 5px;
-  font-size: 16px;
-  color: whitesmoke;
-  background-color: rgb(51, 51, 51);
-
-}
-
-div > #locations-dropdown.container {
-  margin-left: 5%;
 }
 
 ul.locations_menu li span span.locations_resorts{
@@ -234,8 +232,26 @@ ul.locations_menu li div.locations_box a:hover{
   color: #fff;
 }
 
-/* END .Locations Dropdown Menu Styling*/
+/* States styles */
+ul.locations_menu li span span.locations_name,
+ul.locations_menu li span span.locations_resorts,
+ul.locations_menu li div.locations_box a {
+  margin-left: 15px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000000, 1px 1px 1px #000000;
+}
 
+.resorts {
+  padding: 5px;
+  font-size: 16px;
+  color: whitesmoke;
+  background-color: rgb(51, 51, 51);
+}
+
+div > #locations-dropdown.container {
+  margin-left: 5%;
+}
+/*  END .Locations Dropdown Menu Styling  */
 
 .footer {
   font-weight: 700;
