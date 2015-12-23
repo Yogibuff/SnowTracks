@@ -12,3 +12,10 @@ function newLocation(newLat,newLng) {
         lng : newLng
     });
 }
+
+//if jumbotron exists, hide map
+// function hideMap() {
+// 	if($('.jumbotron').length){
+// 	   $('#map').hide();
+// 	}
+// }

@@ -77,6 +77,12 @@ ul {
   2px 3px 1px #eee, 4px 3px 1px #ccc, 3px 4px 1px #eee;
 }
 
+#about-list{
+  text-align: left;
+  list-style-type: upper-roman;
+  margin-left:230px;
+}
+
 .middle-content {
   min-width: 80%;
   min-height: 350px;

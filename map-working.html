@@ -13,6 +13,10 @@
   <link href="css/default.css" rel="stylesheet" type="text/css">
   <link><script src="js/event-listeners.js"></script></link>
   <link><script src="js/initMap.js"></script></link>
+    <!-- Google Maps API link -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR23T6jeO0hXU_Xd0wspLkazWIIxLuyY&callback=initMap"></script>
+  <!-- front-end Javascript links -->
+  <script src="js/front-end.js" type="text/javascript"></script>
   <title>Homepage of Project 2: SnowTracks</title>
 </head>
 <body>
@@ -43,7 +47,7 @@
 
     <div class="header middle-content">
       <div class="container" id="map-container">
-        <div id="map"><!-- <script src="js/map.js"></script> --></div>  <!-- will make this an added element using append child #map-container -->
+        <div id="map"></div>
         <!-- <div class="jumbotron text-center">
           <h1 id="site-name"><img src="images/logo-tiny.png" id="logo"> 
           SnowTracks</h1>
@@ -179,9 +183,5 @@
     <p class="pull-left" id="footer-left">&copy; 2015 SnowTracks, LLC. &middot; <a href="privacypolicy.html">Privacy</a> &middot; <a href="terms.html">Terms of Use</a></p>
   </div> <!-- close .footer -->
   
-  <!-- Google Maps API link -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR23T6jeO0hXU_Xd0wspLkazWIIxLuyY&callback=initMap"></script>
-  <!-- front-end Javascript links -->
-  <script src="js/front-end.js" type="text/javascript"></script>
 </body>
 </html>
