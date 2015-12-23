@@ -11,50 +11,37 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
   <!-- External CSS link -->
   <link href="css/default.css" rel="stylesheet" type="text/css">
-  <link><script src="js/event-listeners.js"></script></link>
-  <link><script src="js/initMap.js"></script></link>
-    <!-- Google Maps API link -->
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR23T6jeO0hXU_Xd0wspLkazWIIxLuyY&callback=initMap"></script>
-  <!-- front-end Javascript links -->
-  <script src="js/front-end.js" type="text/javascript"></script>
   <title>Homepage of Project 2: SnowTracks</title>
-  <script>
-  // remove both text and map when 'Remove Map' clicked
-$("#remove-map").on('click', function () {
-  $('#map').css('opacity', '0');
-  $('.jumbotron').css('display', 'none');
-});
-</script>
 </head>
 <body>
 
-  <!-- page container for css that applies to whole page, such as media queries -->
+<!-- page container for css that applies to whole page, such as media queries -->
   <div class="container-fluid" id="page-container">
     
-  <!-- BEGIN Navbar -->
+<!-- BEGIN Navbar -->
     <div class="navbar-wrapper">
       <div class="container-fluid">
         <nav class="navbar navbar-fixed-left">
           <div class="container-fluid" id="nav-inner-container">
             <div class="navbar-header navbar-collapse collapse">
               <img id="nav-logo" src="images/logo-tiny.png">
-              <a class="navbar-brand" href="index.html">SnowTracks</a>
+              <a class="navbar-brand" href="#">SnowTracks</a>
               <ul class="nav navbar-nav">
-                <li class="nav-item active" id="remove-map"><a href="#">Remove Map</a></li>
-                <li class="nav-item toggle-about-page"><a href="about-us.html">About Us</a></li>
-                <li class="nav-item toggle-sponsors-page"><a href="#">Sponsors</a></li>
-                <li class="nav-item toggle-contact-page"><a href="#">Contact</a></li>
+                <li class="nav-item active"><a href="index.html">Home</a></li>
+                <li class="nav-item toggle-sponsors"><a href="#">Sponsors</a></li>
+                <li class="nav-item toggle-about"><a href="#">About Us</a></li>
+                <li class="nav-item"><a href="#">Contact</a></li>
               </ul>
             </div> <!-- close .navbar-header -->
           </div> <!-- close .container-fluid  #nav-inner-container-->
         </nav> <!-- close .navbar-fixed-top -->
       </div> <!-- close .container-fluid -->
     </div> <!-- close .navbar-wrapper -->
-  <!-- END Navbar -->
+<!-- END Navbar -->
 
     <div class="header middle-content">
-      <div class="container" id="map-container">
-        <div id="map"></div>
+      <div class="container">
+        <div id="map"><script src="js/map.js"></script></div>
         <!-- <div class="jumbotron text-center">
           <h1 id="site-name"><img src="images/logo-tiny.png" id="logo"> 
           SnowTracks</h1>
@@ -70,9 +57,9 @@ $("#remove-map").on('click', function () {
 
 <!-- NEW Dropdown of Top Locations & Resorts -->
     <div class="container" id="locations-dropdown">
-      <ul id="locations_menu" class="locations_menu"> <!-- both needed for animation to function -->
-        <li class="states california" id="california">
-          <a>
+      <ul id="locations_menu" class="locations_menu">
+        <li>
+          <a href="#">
             <img src="images/california.jpg" alt="California"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -82,14 +69,14 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Heavenly</a>
-              <a>Alpine Meadows</a>
-              <a>Squaw Valley</a>
-              <a>Mammoth</a>
+              <a href="#">Heavenly</a>
+              <a href="#">Alpine Meadows</a>
+              <a href="#">Squaw Valley</a>
+              <a href="#">Mammoth</a>
           </div>
         </li>
-        <li class="states colorado" id="colorado">
-          <a>
+        <li>
+          <a href="#">
             <img src="images/colorado.jpg" alt="Colorado"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -99,14 +86,14 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Vail</a>
-              <a>Telluride</a>
-              <a>Keystone</a>
-              <a>Breckenridge</a>
+              <a href="#">Vail</a>
+              <a href="#">Telluride</a>
+              <a href="#">Keystone</a>
+              <a href="#">Breckenridge</a>
           </div>
         </li>
-        <li class="states" id="montana">
-          <a>
+        <li>
+          <a href="#">
             <img src="images/montana.jpg" alt="Montana"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -116,14 +103,14 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Big Sky</a>
-              <a>Bridger Bowl</a>
-              <a>Whitefish</a>
-              <a>Snowbowl</a>
+              <a href="#">Big Sky</a>
+              <a href="#">Bridger Bowl</a>
+              <a href="#">Whitefish</a>
+              <a href="#">Snowbowl</a>
           </div>
         </li>
-        <li class="states" id="new-mexico">
-          <a>
+        <li>
+          <a href="#">
             <img src="images/new-mexico.jpg" alt="New Mexico"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -133,14 +120,14 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Taos Ski Valley</a>
-              <a>Apache</a>
-              <a>Pajarito</a>
-              <a>Angel Fire</a>
+              <a href="#">Taos Ski Valley</a>
+              <a href="#">Apache</a>
+              <a href="#">Pajarito</a>
+              <a href="#">Angel Fire</a>
           </div>
         </li>
-        <li class="states" id="utah">
-          <a>
+        <li>
+          <a href="#">
             <img src="images/utah.jpg" alt="Utah"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -150,14 +137,14 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Alta</a>
-              <a>Solitude</a>
-              <a>Park City</a>
-              <a>Snowbird</a>
+              <a href="#">Alta</a>
+              <a href="#">Solitude</a>
+              <a href="#">Park City</a>
+              <a href="#">Snowbird</a>
           </div>
         </li>
-        <li class="states" id="vermont">
-          <a>
+        <li>
+          <a href="#">
             <img src="images/vermont.jpg" alt="Vermont"/>
             <span class="locations_active"></span>
             <span class="locations_wrap">
@@ -167,10 +154,10 @@ $("#remove-map").on('click', function () {
           </a>
           <div class="locations_box">
               <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-              <a>Killington</a>
-              <a>Jay Peak</a>
-              <a>Smugglers' Notch</a>
-              <a>Stratton</a>
+              <a href="#">Killington</a>
+              <a href="#">Jay Peak</a>
+              <a href="#">Smugglers' Notch</a>
+              <a href="#">Stratton</a>
           </div>
         </li>
       </ul>
@@ -190,5 +177,47 @@ $("#remove-map").on('click', function () {
     <p class="pull-left" id="footer-left">&copy; 2015 SnowTracks, LLC. &middot; <a href="privacypolicy.html">Privacy</a> &middot; <a href="terms.html">Terms of Use</a></p>
   </div> <!-- close .footer -->
   
+<!-- Google Maps API link -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR23T6jeO0hXU_Xd0wspLkazWIIxLuyY&callback=initMap"></script>
+<!-- Javascript links [best practice to skip JQuery ready() handler!] -->
+
+  <script src="js/front-end.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    $(function() {
+      $('#locations_menu > li').bind('mouseenter',function(){
+        var $elem = $(this);
+        $elem.find('img').stop(true).animate( {
+      'width':'170px',
+      'height':'170px',
+      'left':'0px'
+        }, 400, 'easeOutBack').andSelf().find('.locations_wrap').stop(true).animate( {
+        'top':'140px'},500,'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {'height':'170px'},300,function() {
+          var $sub_menu = $elem.find('.locations_box');
+          if($sub_menu.length){
+            var left = '170px';
+            if($elem.parent().children().length == $elem.index()+1)
+              left = '-170px';
+            $sub_menu.show().animate({'left':left},200);
+          } 
+          });
+        }).bind('mouseleave',function(){
+          var $elem = $(this);
+          var $sub_menu = $elem.find('.locations_box');
+          if($sub_menu.length)
+            $sub_menu.hide().css('left','0px');
+          
+          $elem.find('.locations_active').stop(true).animate( {
+            'height':'0px'
+          }, 300).andSelf().find('img').stop(true).animate( {
+            'width':'0px',
+            'height':'0px',
+            'left':'85px'
+          }, 400).andSelf().find('.locations_wrap').stop(true).animate( {
+            'top':'25px'
+          },500);
+        });
+    });
+  </script>
 </body>
 </html>
