@@ -86,16 +86,17 @@ ul {
 }
 
 #about-list {
+  margin-left: 7%;
+  margin-right: 7%;
   text-align: left;
   list-style-type: circle;
-  margin-left: 10%;
   letter-spacing: 1.6px;
 }
 
 #homepage-list {
-  text-align: left;
   margin-left: 7%;
-  margin-right: 7%;
+  margin-right: 7%;  
+  text-align: left;
   list-style-type: circle;
 }
 
