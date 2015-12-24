@@ -8,6 +8,29 @@ var express = require( 'express' ),
 var bodyParser = require( 'body-parser' ),
   parseText = bodyParser.text();
 
+
+/* 
+router.post( '/', function( req, res ) {
+//SnoCountry API reqest URL format (goes on the end) http://feeds.snocountry.net/conditions.php?apiKey=SnowCountry.example&states=ca 
+
+var SnoCountryApi = URL: http://feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example
+request( SnoCountryApi, function( error, response, body ) {
+    // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
+    if ( !error && response.statusCode == 200 ) {
+      console.log( 'Success. Status code: ' + response.statusCode );
+      res.send( body );
+    }
+    else {
+      console.log(error);
+      console.log( 'Status code: ' + response.statusCode );
+    }
+  });
+});
+
+module.exports = router;
+*/
+
+
 // Add a route for POST, with status codes (including success 200 code) logged to the console
 // router.post( '/', function( req, res ) {
 //   //"http://maps.googleapis.com/maps/api/js?key=YOUR_KEY"
@@ -35,30 +58,6 @@ var bodyParser = require( 'body-parser' ),
 // });
 
 // module.exports = router;
-
-
-/* 
-
-router.post( '/', function( req, res ) {
-//SnoCountry API reqest URL format (goes on the end) http://feeds.snocountry.net/conditions.php?apiKey=SnowCountry.example&states=ca 
-
-var SnoCountryApi = URL: http://feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example
-request( SnoCountryApi, function( error, response, body ) {
-    // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
-    if ( !error && response.statusCode == 200 ) {
-      console.log( 'Success. Status code: ' + response.statusCode );
-      res.send( body );
-    }
-    else {
-      console.log(error);
-      console.log( 'Status code: ' + response.statusCode );
-    }
-  });
-});
-
-module.exports = router;
-
-*/
 
 
 //////////////  Promises Synchronous order of operations  //////////////
