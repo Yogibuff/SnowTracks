@@ -6,7 +6,8 @@ var map;
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: new google.maps.LatLng(39.17852,-120.22769),
-    zoom: 6
+    zoom: 6,
+    scrollwheel: false // disable mouse scrolling
   });
 }
 
