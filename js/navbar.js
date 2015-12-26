@@ -4,10 +4,22 @@
 
 // 'Remove Map' on click removes both text and map 
 $(document.body).ready(function () {
-	$("#remove-map").on('click', function () {
-	  $('#map').css('opacity', '0');
-	  $('.jumbotron').css('display', 'none');
-	});
+  $("#remove-map").on('click', function () {
+    $('#map').css('opacity', '0');
+    $('.jumbotron').css('display', 'none');
+  });
+});
+
+$(document.body).ready(function () {
+  //Stack menu when collapsed
+  $('navbar-sandwich').on('show.navbar-collapse', function() {
+      $('.nav-pills').addClass('nav-stacked');
+  });
+
+  //Unstack menu when not collapsed
+  $('navbar-sandwich').on('hide.navbar-collapse', function() {
+      $('.nav-pills').removeClass('nav-stacked');
+  });
 });
 
 // 'Remove Map' nav button just hides #map

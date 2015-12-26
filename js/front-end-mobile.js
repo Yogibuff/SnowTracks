@@ -1,6 +1,6 @@
-  ///////////////////////////////////
-/* Front-end Javascript and JQuery */
- //////////////////////////////////
+  /////////////////////////////////////////
+/* Front-end JQuery animations for Mobile */
+ /////////////////////////////////////////
 
 // $((document.body).ready(function() {
 //   $('#locations_box > a').bind('mouseenter',function() {
@@ -20,16 +20,38 @@ $(document.body).ready(function() {
       'height':'170px',
       'left':'0px'
     }, 400, 'easeOutBack').andSelf().find('.locations_wrap').stop(true).animate( {
-      'top':'140px'}, 500, 'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {
+      // var $elem = $(this);
+      // if($elem == $('#vermont') {
+      //   'top':'-140px';
+      // }
+      // if($elem == $('#utah') {
+      //   'top':'-140px';
+      // }
+      // else {
+      //   'top':'140px';
+      // }
+
+      // all except UT, VT 'top':'-140px'
+      'top':'140px'
+      }, 500, 'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {
         'height':'170px'
       }, 300, 
       function() {
         var $sub_menu = $elem.find('.locations_box');
         if($sub_menu.length){
+          // Resorts animate left 170px for 4 States where it does cover another State
           var left = '170px';
-          if($elem.parent().children().length < $elem.index()+4)
+          // if .locations_box elements California and Montana 'mouseenter' event, animate them left -170px instead
+
+          // tagets just california
+          if($elem.parent().children().length > $elem.index()+5)
             left = '-170px';
-          $sub_menu.show().animate({'left':left}, 200);
+
+          // tagets just montana
+          if($elem.parent().children().length == $elem.index()+4)
+            left = '-170px';
+          // animate Resorts tile to the left, if element is not CA or MO
+          $sub_menu.show().animate({'left':left},200);
         } 
       });
     }).bind('mouseleave',function(){
