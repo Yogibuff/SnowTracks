@@ -7,17 +7,20 @@ var express = require('express'),
     port = 3000;
 
 // set a route for the root of the server
-app.get('/', function(req, res) {
+app.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/index.html'));
+  next();
 });
 
 // other routes
-app.get('/index.html', function(req, res) {
+app.get('/index.html', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/index.html'));
+  next();
 });
 
-app.get('/about-us.html', function(req, res) {
+app.get('/about-us.html', function(req, res, next) {
   res.sendFile(path.join(__dirname + '/about-us.html'));
+  next();
 });
 
 app.get('/package.json', function(req, res) {
