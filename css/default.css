@@ -288,22 +288,20 @@ div > #locations-dropdown.container {
 }
 
 /* Media Queries */
+
+/* hide Jumbotron bulleted content */
 @media (max-width: 1100px) {
   .jumbotron > #homepage-list , #content-split {
     display: none;
   }
-  div>#locations_menu {
-    display: block;
-/*    width: 400px !important;*/
-    margin: 0 auto;
-  }
 }
 
 @media (min-width: 801px) and (max-width: 1000px) {
-  /* spacing States 2 wide, 3 tall */
+  /* stack States menu 2 wide, 3 tall */
   div>.locations_menu  {
     display: block;
-    max-width: 800px;  
+    max-width: 800px;
+    margin: 0 auto;  
   }  
   ul.locations_menu li {
       margin: 85px !important;
@@ -312,6 +310,7 @@ div > #locations-dropdown.container {
     padding-left: 0 !important;
     margin-left: auto;
   }
+/* wide Map for small viewports */
   #map {
     width: auto;
     max-width: 600px;
@@ -331,22 +330,15 @@ div > #locations-dropdown.container {
   }
   div>#locations_menu {
     display: block;
-/*    width: 400px !important;*/
     margin: 0 auto;
     padding-left: 5px;
   }
   #home-summary {
     display: visible !important;
   }
-}
-
-@media (max-width: 780px) {
   .navbar-header {
     margin-left: 0 !important;
   }
-}
-
-@media (max-width: 800px) {
   /* spacing States 2 wide, 3 tall */
   ul.locations_menu li {
     margin: 85px !important;
