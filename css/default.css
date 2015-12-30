@@ -101,14 +101,17 @@ ul {
 #homepage-list {
   margin-left: 7%;
   margin-right: 7%;  
-  text-align: left;
-  list-style-type: circle;
 }
 
 .welcome-text {
-  line-height: 24px;
+  max-width: 700px !important;  
+  padding-right: 30px;
+  padding-top: 15px;
+  margin-bottom: 0px;
+  list-style-type: none !important;
+  text-align: center;
+  line-height: 2px;
   font-size: 18px;
-  max-width: 700px !important;
 }
 
 #content-split {

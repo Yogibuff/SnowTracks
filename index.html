@@ -22,8 +22,6 @@
   <title>SnowTracks: Home</title>
 </head>
 <body>
-
-  <!-- page container for css that applies to whole page, such as media queries -->
   <div class="container-fluid" id="page-container">
     
   <!-- BEGIN Navbar -->
@@ -52,16 +50,13 @@
         <!-- becomes visible when user clicks a State, which initializes the map generating function and displays this div -->
         <div id="map" style="opacity: 0"></div>
         <div class="jumbotron text-center"> <!-- becomes hidden when user selects a State -->
-          <h1 id="site-name"><img src="images/logo-tiny.png" id="logo"> <!-- serve logo img with static server -->
+          <h1 id="site-name"><img src="images/logo-tiny.png" id="logo">
           SnowTracks</h1>
-          <h4>We love snow and want to help you find the best resorts,</h4>
-          <h4>do quick vacation planning, and track winter weather conditions!</h4>
+          <h4>The <em>fastest</em> way to compare winter vacation destinations</h4>
           <hr id="content-split">
           <hr id="content-split">
           <ul id="homepage-list">
-            <li><h4 class="welcome-text">Welcome to the World's First mashup of Google Maps API with SnoCountry API</h4></li>
-            <li><h4 class="welcome-text">This is the place for Winter Sports Enthusiasts and Vacation Travel Planners</h4></li>
-            <li><h4 class="welcome-text">Quickly view a Google Map and resort facilities for the top locations in the US, complete with powder reports.</h4></li>
+            <li><h4 class="welcome-text">Click any State below to begin!</h4></li>
           </ul>
           <br>
         </div>
@@ -70,7 +65,7 @@
 
   <!-- NEW Dropdown of Top Locations & Resorts -->
     <div class="container" id="locations-dropdown">
-      <ul id="locations_menu" class="locations_menu"> <!-- both needed for animation to function -->
+      <ul id="locations_menu" class="locations_menu"> <!-- both needed for animation -->
         <li class="states california" id="california">
           <a>
             <img src="images/california.jpg" alt="California"/>
