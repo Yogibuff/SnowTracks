@@ -2,12 +2,6 @@
 /* Front-end JQuery animations for Mobile */
  /////////////////////////////////////////
 
-// $((document.body).ready(function() {
-//   $('#locations_box > a').bind('mouseenter',function() {
-//     var $elem = $(this);
-//     $elem.find('resorts').stop(true)
-
-
 // Locations-dropdown, as well as other various animations to potentially use
 /* For each State, on mouseover enlarge the state's image, and show list of resorts */
 
@@ -56,67 +50,6 @@ $(document.body).ready(function() {
       },500);
     });
 });
-
-// $(document.body).ready(function() {
-//   $('#locations_menu > li').bind('mouseenter',function() {
-//     var $elem = $(this);
-//     $elem.find('img').stop(true).animate( {
-//       'width':'170px',
-//       'height':'170px',
-//       'left':'0px'
-//     }, 400, 'easeOutBack').andSelf().find('.locations_wrap').stop(true).animate( {
-//       // var $elem = $(this);
-//       // if($elem == $('#vermont') {
-//       //   'top':'-140px';
-//       // }
-//       // if($elem == $('#utah') {
-//       //   'top':'-140px';
-//       // }
-//       // else {
-//       //   'top':'140px';
-//       // }
-
-//       // 'top':'-140px' (animates the words correctly, but then they have no black background color)
-//       // 'top': '140px' for UT, VT so the words don't overlap States
-//       'top':'140px'
-//       }, 500, 'easeOutBack').andSelf().find('.locations_active').stop(true).animate( {
-//         'height':'170px'
-//       }, 300, 
-//       function() {
-//         var $sub_menu = $elem.find('.locations_box');
-//         if($sub_menu.length){
-//           // Resorts animate left 170px for 4 States where it does cover another State
-//           var left = '170px';
-//           // if .locations_box elements California and Montana 'mouseenter' event, animate them left -170px instead
-
-//           // tagets just california
-//           if($elem.parent().children().length > $elem.index()+5)
-//             left = '-170px';
-
-//           // tagets just montana
-//           if($elem.parent().children().length == $elem.index()+4)
-//             left = '-170px';
-//           // animate Resorts tile to the left, if element is not CA or MO
-//           $sub_menu.show().animate({'left':left},200);
-//         } 
-//       });
-//     }).bind('mouseleave',function(){
-//       var $elem = $(this);
-//       var $sub_menu = $elem.find('.locations_box');
-//       if($sub_menu.length)
-//         $sub_menu.hide().css('left','0px');
-      
-//       $elem.find('.locations_active').stop(true).animate( {
-//         'height':'0px'
-//       }, 300).andSelf().find('img').stop(true).animate( {
-//         'width':'0px',
-//         'height':'0px',
-//         'left':'85px'
-//       }, 400).andSelf().find('.locations_wrap').stop(true).animate( {
-//         'top':'25px'
-//       },500);
-//     });
-// });
 
 // Variable Key t: current time, b: begInnIng value, c: change In value, d: duration
 jQuery.easing['jswing'] = jQuery.easing['swing'];
