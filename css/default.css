@@ -14,10 +14,13 @@ a:link, a:visited {
 }
 
 #page-container {
-  /*background-image: url("../images/snowy-streets-opaque.png");*/
-   background-image: url("../images/snowy-mountains.jpg");
+  background-image: url("../images/snowy-mountains.jpg");
+  /* Fill background */
   background-repeat: no-repeat;
   background-size: cover;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
 
 nav {
@@ -315,6 +318,10 @@ div > #locations-dropdown.container {
 
 /*  END .Locations Dropdown Menu Styling  */
 
+#sponsors {
+  height: 160px;
+}
+
 .footer {
   font-weight: 700;
   padding: 10px;
@@ -352,11 +359,8 @@ div > #locations-dropdown.container {
 }
 
 @media (max-width: 800px) {
-  .jumbotron > #homepage-list , #content-split {
-    display: none;
-  }
   .jumbotron {
-    background-color: rgba(217, 217, 217, 0.4);;
+    background-color: rgba(217, 217, 217, 0.6);;
   }
   .jumbotron > h1, .jumbotron > h4 {
     text-shadow: none;

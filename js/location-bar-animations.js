@@ -1,18 +1,13 @@
-  ///////////////////////////////////
-/* Front-end Javascript and JQuery */
- //////////////////////////////////
+  /////////////////////////////////////////
+/* Front-end JQuery animations for Mobile */
+ /////////////////////////////////////////
 
-// $((document.body).ready(function() {
-//   $('#locations_box > a').bind('mouseenter',function() {
-//     var $elem = $(this);
-//     $elem.find('resorts').stop(true)
+/*  JQuery Animations for Locations Dropdown Menu  */
 
+/* For each State on mouseover: show picture for that State and show list of resorts
+    to the left or right depending on the position. Intent is to fit on all viewports */
 
-// Locations-dropdown, as well as other various animations to potentially use
-/* For each State, on mouseover enlarge the state's image, and show list of resorts */
-
-
-$(document.body).ready(function() {
+$(document).ready(function() {
   $('#locations_menu > li').bind('mouseenter',function() {
     var $elem = $(this);
     $elem.find('img').stop(true).animate( {
@@ -26,8 +21,16 @@ $(document.body).ready(function() {
       function() {
         var $sub_menu = $elem.find('.locations_box');
         if($sub_menu.length){
+          // california, montana, utah slide right toward center
           var left = '170px';
-          if($elem.parent().children().length < $elem.index()+4)
+          // colorado slide left toward center
+          if($elem.parent().children().length == $elem.index()+5)
+            left = '-170px';
+          // new mexico slide left toward center
+          if($elem.parent().children().length == $elem.index()+3)
+            left = '-170px';
+          // vermont slide left toward center
+          if($elem.parent().children().length == $elem.index()+1)
             left = '-170px';
           $sub_menu.show().animate({'left':left}, 200);
         } 
@@ -49,6 +52,9 @@ $(document.body).ready(function() {
       },500);
     });
 });
+
+
+
 
 // Variable Key t: current time, b: begInnIng value, c: change In value, d: duration
 jQuery.easing['jswing'] = jQuery.easing['swing'];
