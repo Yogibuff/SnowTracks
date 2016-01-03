@@ -27,7 +27,6 @@
 // breckenridge : https://goo.gl/maps/csRjiH2wTDo
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3079.504993684828!2d-106.06906858497312!3d39.48051021996677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876af5de55ff22e5%3A0xcb03255c537d3e1c!2sBreckenridge+Ski+Resort!5e0!3m2!1sen!2sus!4v1450914254091" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-
 /* Montana */
 // big sky : 
 
