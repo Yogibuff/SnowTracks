@@ -378,6 +378,12 @@ div > #locations-dropdown.container {
   background-color: rgba(189, 189, 188, 1);
 }
 
+.modal-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+}
+
 textarea #message {
   width: 90%;
   max-width: 95%;
@@ -389,12 +395,16 @@ textarea #message {
   text-align: left; 
 }
 
+.select-snowsport {
+  max-width: 62%;
+}
+
 form {
   width: 80%;
   margin: 0 auto;
 }
 
-label, input {
+label, input, select {
   display: inline-block;
 }
 
@@ -404,17 +414,27 @@ label {
   text-align: right;
 }
 
-label + input {
+label + input,
+label + select {
   width: 60%;
   margin: 0 5% 0 3%;
 }
 
-input + input {
+input + input,
+select {
   float: right;
+}
+
+.modal-backdrop {
+  z-index: 0;
 }
 
 .remove-alignment {
   text-align: center !important;
+}
+
+form li {
+  list-style: none;
 }
 /* END modal styles */
 
