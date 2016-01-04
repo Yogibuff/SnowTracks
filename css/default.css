@@ -30,6 +30,10 @@ ul {
 
 /* //////////// Navbar Styles //////////// */
 
+#nav-menu {
+  z-index: 5;
+}
+
 #nav-logo {
   max-height: 40px;
   float: left;
