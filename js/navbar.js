@@ -2,6 +2,8 @@
 //          Navbar  Event  Listeners          //
 ////////////////////////////////////////////////
 
+/* Remove Map */
+
 // 'Remove Map' on click removes both text and map 
 $(document.body).ready(function () {
   $("#remove-map").on('click', function () {
@@ -10,54 +12,15 @@ $(document.body).ready(function () {
   });
 });
 
-$(document.body).ready(function () {
-  //Stack menu when collapsed
-  $('navbar-sandwich').on('show.navbar-collapse', function() {
-      $('.nav-pills').addClass('nav-stacked');
-  });
 
-  //Unstack menu when not collapsed
-  $('navbar-sandwich').on('hide.navbar-collapse', function() {
-      $('.nav-pills').removeClass('nav-stacked');
-  });
-});
+/* Sponsors */
 
-// 'Remove Map' nav button just hides #map
-// $("#remove-map").click(function () {
-//   $('#map').css('opacity', '0');
-// });
-
-
-// // Function to change the content to about page
-// function aboutJumbotron() {
-//   var jumbotron = document.getElementById("jumbotron");
-//   jumbotron.child[4].nodeValue = "About content, line by line";
-// }
-
-// // add event listener for 'about' on the navbar
-// var aboutClicked = document.getElementById("outside");
-// aboutClicked.addEventListener("click", aboutJumbotron, false);
-
-
-// // Function to change the content to contact page
-// function contactJumbotron() {
-//   var jumbotron = document.getElementById("jumbotron");
-//   jumbotron.child[4].nodeValue = "Contact jumbotron content, line by line";
-// }
-
-
-// // add event listener for 'contact' on the navbar
-// var contactClicked = document.getElementById("outside");
-// contactClicked.addEventListener("click", contactJumbotron, false);
-
-
-
-// // Function to change the content
+// add sponsor logos to .container #sponsors
 // function insertSponsors() {
-//   var jumbotron = document.getElementById("jumbotron");
-//     jumbotron.firstChild.nodeValue = "pictures of sponsors go in-line here";
+//   var sponsors = document.getElementById("sponsors");
+//   sponsors.firstChild.nodeValue = "picture 1 - sponsors going to be added as in-line children elements of #sponsors";
 // }
 
-// // add event listener
-// var sponsored = document.getElementById("sponsors");
-// sponsored.addEventListener("click", insertSponsors, false);
+// add event listener
+// var showSponsors = document.getElementById("show-sponsors");
+// showSponsors.addEventListener("click", insertSponsors, false);
