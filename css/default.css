@@ -58,22 +58,23 @@ ul {
   border-bottom-width: 0px;
 }
 
-#nav-menu.navbar-default .navbar-nav > li > a {
+#nav-menu.navbar-default .navbar-nav > li .nav-hover-style {
   color: rgba(119, 119, 119, 1);
   background-color: rgba(189, 189, 188, 1);
   background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 188, 1) 100%);
+  text-align: center;
 }
 
-#nav-menu.navbar-default .navbar-nav > li > a:hover,
-#nav-menu.navbar-default .navbar-nav > li > a:focus {
+#nav-menu.navbar-default .navbar-nav > li .nav-hover-style:hover,
+#nav-menu.navbar-default .navbar-nav > li .nav-hover-style:focus {
   color: rgba(77, 74, 74, 1);
   background-color: rgba(166, 164, 164, 1);
   background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, rgba(166, 164, 164, 1) 100%);
 }
 
-#nav-menu.navbar-default .navbar-nav > .active > a,
-#nav-menu.navbar-default .navbar-nav > .active > a:hover,
-#nav-menu.navbar-default .navbar-nav > .active > a:focus {
+#nav-menu.navbar-default .navbar-nav > .active .nav-hover-style,
+#nav-menu.navbar-default .navbar-nav > .active .nav-hover-style:hover,
+#nav-menu.navbar-default .navbar-nav > .active .nav-hover-style:focus {
   color: rgba(77, 74, 74, 1);
   background-color: rgba(51, 122, 183, 1);
   background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(51, 122, 183, 1) 100%);
@@ -363,6 +364,61 @@ div > #locations-dropdown.container {
 }
 
 
+/* Modal Styles */
+
+#contact-btn-align {
+  padding-top: 8px  !important;
+  padding-bottom: 7px  !important;
+  text-align: center;
+}
+
+#contact-modal-button {
+  color: rgb(119, 119, 119);
+  background-image: linear-gradient(rgb(237, 237, 237) 0%, rgb(189, 189, 188) 100%);
+  background-color: rgba(189, 189, 188, 1);
+}
+
+textarea #message {
+  width: 90%;
+  max-width: 95%;
+  left: 5%; /* (100%-width)/2 */
+  /* place center */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  text-align: left; 
+}
+
+form {
+  width: 80%;
+  margin: 0 auto;
+}
+
+label, input {
+  display: inline-block;
+}
+
+label {
+  width: 30%;
+  /* positions the label text beside the input */
+  text-align: right;
+}
+
+label + input {
+  width: 60%;
+  margin: 0 5% 0 3%;
+}
+
+input + input {
+  float: right;
+}
+
+.remove-alignment {
+  text-align: center !important;
+}
+/* END modal styles */
+
+
 /* //////////// Media Queries //////////// */
 
 /* hide Jumbotron bulleted content */
@@ -374,7 +430,7 @@ div > #locations-dropdown.container {
 
 @media (min-width: 801px) and (max-width: 1000px) {
   /* stack States menu 2 wide, 3 tall */
-  div >.locations_menu  {
+  div > .locations_menu  {
     display: block;
     max-width: 800px;
     margin: 0 auto;  
@@ -398,14 +454,25 @@ div > #locations-dropdown.container {
   .jumbotron {
     background-color: rgba(217, 217, 217, 0.6);;
   }
+  
   .jumbotron > h1, .jumbotron > h4 {
     text-shadow: none;
   }
-  div >#locations_menu {
+  
+  .jumbotron #logo {
+    max-height: 70px  !important;
+  }
+
+  .jumbotron > #site-name {
+    font-size: 45px;
+  }
+
+  div > #locations_menu {
     display: block;
     margin: 0 auto;
     padding-left: 5px;
   }
+  
   #home-summary {
     display: visible !important;
   }
@@ -414,9 +481,11 @@ div > #locations-dropdown.container {
   ul.locations_menu li {
     margin: 85px !important;
   }
+  
   div > #locations-dropdown.container {
     padding-left: 0 !important;
   }
+  
   #map {
     width: auto;
     max-width: 600px;
