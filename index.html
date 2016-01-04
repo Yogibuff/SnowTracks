@@ -7,7 +7,7 @@
   <!-- JQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <!-- Bootstrap and Font-Awesome libraries -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
   <!-- External CSS -->
   <link href="css/default.css" rel="stylesheet" type="text/css">
@@ -25,24 +25,33 @@
   <div class="container-fluid" id="page-container">
     
   <!-- BEGIN Navbar -->
-    <div class="navbar-wrapper">
+    <div id="nav-menu" class="navbar navbar-default " role="navigation">
       <div class="container-fluid">
-        <nav class="navbar navbar-fixed-left">
-          <div class="container-fluid" id="nav-inner-container">
-            <div class="navbar-header navbar-collapse collapse">
-              <img id="nav-logo" src="images/logo-tiny.png">
-              <a class="navbar-brand" href="index.html">SnowTracks</a>
-              <ul class="nav navbar-nav">
-                <li class="nav-item toggle-about-page"><a href="about-us.html">About Us</a></li>
-                <li class="nav-item active" id="remove-map"><a>Remove Map</a></li>
-                <li class="nav-item toggle-sponsors-page"><a href="#">Sponsors</a></li>
-                <li class="nav-item toggle-contact-page"><a href="#">Contact</a></li>
-              </ul>
-            </div> <!-- close .navbar-header -->
-          </div> <!-- close .container-fluid  #nav-inner-container-->
-        </nav> <!-- close .navbar-fixed-top -->
-      </div> <!-- close .container-fluid -->
-    </div> <!-- close .navbar-wrapper -->
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html"><img id="nav-logo" src="images/logo-tiny.png">SnowTracks ®</a>
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-dropdown">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-dropdown">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="about-us.html">About Us</a>
+            </li>
+            <li><a href="#"><i class="fa fa-map-marker"></i> Remove Map</a>
+            </li>
+            <li><a href="#"><i class="fa fa-globe"></i> Sponsors</a>
+            </li>
+            <li><a href="#"><i class="fa fa-envelope"></i> Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   <!-- END Navbar -->
 
     <div class="header middle-content">

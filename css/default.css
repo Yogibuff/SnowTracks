@@ -1,16 +1,20 @@
-/* Stylesheet - initial commit */
+/* //////////// Page Styles //////////// */
 
 * {
-    font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+  font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
 }
 
 h4 {
   font-family: "Della Respira";
 }
 
-/* remove hyperlink-visited color */
+/* remove hyperlink color */
 a:link, a:visited {
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #page-container {
@@ -23,36 +27,14 @@ a:link, a:visited {
   min-height: 100%;
 }
 
-nav {
-  background-color: rgba(217, 217, 217, 0.6);
- /* text-shadow: 1px 3px 5px white;*/
-}
 
-a.navbar-brand {
-  font-size: 24px;
-  font-weight: 600;
-  margin-left: 0 !important;
-}
-
-#site-name {
-  font-size: 63px !important;
-}
-
-ul {
-  list-style-type: none;
-}
-
-.navbar-header > .nav > .nav-item {
-  margin-left: 20px;
-  font-weight: 400;
-  font-size: 18px;
-}
+/* //////////// Navbar Styles //////////// */
 
 #nav-logo {
   max-height: 40px;
   float: left;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin-top: -10px;
+  margin-right: 10px;
   border-bottom-left-radius: 9px; 
   border-bottom-right-radius: 9px;
   border-top-left-radius: 9px;
@@ -60,14 +42,56 @@ ul {
   opacity: 0.9;
 }
 
-#logo {
-  border-bottom-left-radius: 20px; 
-  border-bottom-right-radius: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  opacity: 0.85;
-  margin-bottom: 14px;
+.navbar-brand {
+  font-size: 24px;
+  font-weight: 600;
 }
+
+#nav-menu.navbar-default .navbar-brand {
+  color: rgba(51, 122, 183, 1);
+}
+
+#nav-menu.navbar-default {
+  font-size: 16px;
+  background-color: rgba(189, 189, 189, 1);
+  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 189, 1) 100%);
+  border-bottom-width: 0px;
+}
+
+#nav-menu.navbar-default .navbar-nav > li > a {
+  color: rgba(119, 119, 119, 1);
+  background-color: rgba(189, 189, 188, 1);
+  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 188, 1) 100%);
+}
+
+#nav-menu.navbar-default .navbar-nav > li > a:hover,
+#nav-menu.navbar-default .navbar-nav > li > a:focus {
+  color: rgba(77, 74, 74, 1);
+  background-color: rgba(166, 164, 164, 1);
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, rgba(166, 164, 164, 1) 100%);
+}
+
+#nav-menu.navbar-default .navbar-nav > .active > a,
+#nav-menu.navbar-default .navbar-nav > .active > a:hover,
+#nav-menu.navbar-default .navbar-nav > .active > a:focus {
+  color: rgba(77, 74, 74, 1);
+  background-color: rgba(51, 122, 183, 1);
+  background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(51, 122, 183, 1) 100%);
+}
+
+#nav-menu.navbar-default .navbar-toggle .icon-bar,
+#nav-menu.navbar-default .navbar-toggle:hover,
+#nav-menu.navbar-default .navbar-toggle:focus {
+  background-color: #337ab7;
+}
+
+#nav-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#nav-menu.navbar-default .navbar-toggle:focus .icon-bar {
+  background-color: #bdbdbd;
+}
+
+
+/* //////////// Jumbotron Styles //////////// */
 
 .jumbotron {
   /*max-width: 1100px;*/
@@ -136,6 +160,15 @@ hr + hr {
   margin-bottom: 40px;
 }
 
+#logo {
+  border-bottom-left-radius: 20px; 
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
 #map {
   position: absolute;
   top: 60px;
@@ -157,7 +190,8 @@ hr + hr {
 }
 
 
-/* BEGIN .Locations Dropdown Menu Styling */
+/* //////////// Location Menu Styles //////////// */
+
 ul.locations_menu {
   margin: 0;
   padding: 0;
@@ -279,7 +313,7 @@ ul.locations_menu li div.locations_box {
   background: rgba(217, 217, 217, 0.7);
 }
 
-ul.locations_menu li div.locations_box a{
+ul.locations_menu li div.locations_box a {
   float: left;
   clear: both;
   line-height: 30px;
@@ -287,15 +321,15 @@ ul.locations_menu li div.locations_box a{
   font-size: 16px;
 }
 
-ul.locations_menu li div.locations_box a:first-child{
+ul.locations_menu li div.locations_box a:first-child {
   margin-top: 15px;
 }
 
-ul.locations_menu li div.locations_box a:hover{
+ul.locations_menu li div.locations_box a:hover {
   color: #fff;
 }
 
-/* States styles */
+/* State Names */
 ul.locations_menu li span span.locations_name,
 ul.locations_menu li span span.locations_resorts,
 ul.locations_menu li div.locations_box a {
@@ -316,7 +350,8 @@ div > #locations-dropdown.container {
   margin-bottom: 10px;
 }
 
-/*  END .Locations Dropdown Menu Styling  */
+/*  END Locations Dropdown Menu Styles  */
+
 
 #sponsors {
   height: 160px;
@@ -327,7 +362,8 @@ div > #locations-dropdown.container {
   padding: 10px;
 }
 
-/* Media Queries */
+
+/* //////////// Media Queries //////////// */
 
 /* hide Jumbotron bulleted content */
 @media (max-width: 1100px) {
@@ -338,7 +374,7 @@ div > #locations-dropdown.container {
 
 @media (min-width: 801px) and (max-width: 1000px) {
   /* stack States menu 2 wide, 3 tall */
-  div>.locations_menu  {
+  div >.locations_menu  {
     display: block;
     max-width: 800px;
     margin: 0 auto;  
@@ -365,7 +401,7 @@ div > #locations-dropdown.container {
   .jumbotron > h1, .jumbotron > h4 {
     text-shadow: none;
   }
-  div>#locations_menu {
+  div >#locations_menu {
     display: block;
     margin: 0 auto;
     padding-left: 5px;
@@ -373,9 +409,7 @@ div > #locations-dropdown.container {
   #home-summary {
     display: visible !important;
   }
-  .navbar-header {
-    margin-left: 0 !important;
-  }
+
   /* spacing States 2 wide, 3 tall */
   ul.locations_menu li {
     margin: 85px !important;
