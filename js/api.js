@@ -5,18 +5,17 @@ var express = require('express'),
     router = express.Router();
 
 // body-parser middlewear, to be used with SnoCountry API JSON returned data
-// Add '&output=json' to end of SnoCountry API for Json formatted response
 var bodyParser = require('body-parser'),
     parseText = bodyParser.text();
 
 router.post( '/', function(req, res) {
   // SnoCountry API reqest URL format: http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=ca&resortType=alpine&output=json
-  // (modifiers attached on the end, ex: '&states=ca')
-  // var allOptions = statesArray ['ca', 'co', 'mt', 'nm', 'ut', 'vt'];
-
+  // (modifiers attached state, ex: '&states=ca', and resort id, ex: &ids=802007)
+  // Add '&output=json' to end of SnoCountry API for Json formatted response
+  // var acceptableStates = statesArray ['ca', 'co', 'mt', 'nm', 'ut', 'vt'];
   // var requestedState = req.body
 
-  var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=" + requestedState + "&resortType=alpine&output=json";
+  var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=" + requestedState + "&resortType=alpine" + "&output=json";
   request( SnoCountryQuery, function(error, response, body) {
     // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
     if ( !error && response.statusCode == 200 ) {
