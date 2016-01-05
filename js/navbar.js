@@ -17,10 +17,40 @@ $(document.body).ready(function () {
 
 // add sponsor logos to .container #sponsors
 // function insertSponsors() {
-//   var sponsors = document.getElementById("sponsors");
-//   sponsors.firstChild.nodeValue = "picture 1 - sponsors going to be added as in-line children elements of #sponsors";
+//   var sponsorImages = document.getElementById("sponsors").children;
+  
+//   // if sponsor image exists, remove it on click instead
+//   if (sponsorImages.length > 1) {
+//     sponsorImages.nodeValue = "";
+//   }
+//   else {
+//     sponsorImages[0].nodeValue = " <img src='images/snowbird-logo.png'> ";
+//     sponsorImages[1].nodeValue = " <img src='images/snocountry_logo.png'> ";
+//     sponsorImages[2].nodeValue = " <img src='images/google-maps-logo.jpg'> ";
+//     sponsorImages[3].nodeValue = " <img src='images/killington-logo.png'> ";
+//     sponsorImages[3].nodeValue = " <img src='images/mammoth-logo.jpg'> ";
+//   }
 // }
 
+var createSponsors = function(src, sponsors) {
+  var sponsors = document.getElementById(sponsors);
+  var image = document.createElement('img');
+  image.setAttribute('src', src);
+  sponsors.appendChild(image);
+};
+
+
 // add event listener
-// var showSponsors = document.getElementById("show-sponsors");
-// showSponsors.addEventListener("click", insertSponsors, false);
+var showSponsors = document.getElementById("show-sponsors");
+showSponsors.addEventListener("click", function(){
+  if (sponsors.children.length > 1) {
+    sponsors.innerHTML = "";
+  }
+  else {
+  createSponsors('images/snowbird-logo.png', 'sponsors');
+  createSponsors('images/snocountry_logo.png', 'sponsors');
+  createSponsors('images/google-maps-logo.jpg', 'sponsors');
+  createSponsors('images/killington-logo.png', 'sponsors');
+  createSponsors('images/mammoth-logo.jpg', 'sponsors');
+}
+}, false);
