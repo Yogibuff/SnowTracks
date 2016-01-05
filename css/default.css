@@ -189,6 +189,10 @@ hr + hr {
   z-index: 1;
 }
 
+#map div {
+  cursor: default;
+}
+
 /* on 'click' event sets #map's opacity: 0 */
 #remove-map {
   cursor: pointer;
