@@ -16,7 +16,7 @@ $(document.body).ready(function () {
 /* Sponsors */
 
 var createSponsors = function(src, sponsors) {
-  var sponsors = document.getElementById(sponsors);
+  var sponsors = document.getElementById("sponsors");
   var image = document.createElement('img');
   image.setAttribute('src', src);
   sponsors.appendChild(image);
