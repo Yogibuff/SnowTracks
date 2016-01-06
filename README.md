@@ -1,13 +1,13 @@
 # SnowTracks
 We love snow and want to help you find the best resorts, do quick vacation planning, and track winter weather conditions!
 
-<img src="images/snowtracks-homepage-demo.png">
+<img src="images/snowtracks-homepage-with-sponsors.png">
 
 ###**About this App** 
 **It's a** mashup of Google Maps API with SnoCountry API in a single-page website **for** winter sports enthusiasts and vacation travel planners 
 **who** want to quickly view the snow conditions with a map of relevent activities and resort facilities in a given location.
 
-<img src="images/snowtracks-about-demo.png">
+<img src="images/snowtracks-about-demo-withnav.png">
 
 >The Google Maps API allow for the embedding of Google Maps onto web pages of outside developers, using a simple JavaScript interface or a Flash interface.
 
@@ -35,5 +35,5 @@ We love snow and want to help you find the best resorts, do quick vacation plann
                 date range.
     Feature 2: user can explore local activities that are useful for winter sports enthusiasts and 
                 vacation travel planners.
-    Feature 3: user can click a link to additional information on ski resort facilities, pricing, and 
-                pictures beyond that provided from Google Maps API.
+    Feature 3: user can select a specific resort from the location bar's dropdown menu to view additional 
+                information on ski resort facilities, location, star rating, and pictures.
