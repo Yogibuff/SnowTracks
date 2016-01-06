@@ -33,6 +33,7 @@ ul {
 /* //////////// Navbar Styles //////////// */
 
 #nav-menu {
+  background-color: rgba(231, 231, 231, 0);
   z-index: 5;
 }
 
@@ -53,29 +54,39 @@ ul {
   font-weight: 600;
 }
 
-#nav-menu.navbar-default .navbar-brand {
-  color: rgba(51, 122, 183, 1);
-}
-
 #nav-menu.navbar-default {
   font-size: 16px;
-  background-color: rgba(189, 189, 189, 1);
-  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 189, 1) 100%);
-  border-bottom-width: 0px;
+  background-color: rgba(189, 189, 189, 0);
+  /*background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 189, 1) 100%);*/
+  border-width: 0px;
 }
 
 #nav-menu.navbar-default .navbar-nav > li .nav-hover-style {
   color: rgba(119, 119, 119, 1);
-  background-color: rgba(189, 189, 188, 1);
-  background: linear-gradient(to bottom, rgba(237, 237, 237, 1) 0%, rgba(189, 189, 188, 1) 100%);
+  background-color: rgba(189, 189, 188, 0);
+  background: linear-gradient(to bottom, rgba(237, 237, 237, 0) 0%, rgba(189, 189, 188, 0) 100%);
   text-align: center;
 }
 
 #nav-menu.navbar-default .navbar-nav > li .nav-hover-style:hover,
 #nav-menu.navbar-default .navbar-nav > li .nav-hover-style:focus {
   color: rgba(77, 74, 74, 1);
-  background-color: rgba(166, 164, 164, 1);
-  background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, rgba(166, 164, 164, 1) 100%);
+  background-color: rgba(166, 164, 164, 0);
+  background: linear-gradient(to bottom, rgba(248, 248, 248, 0) 0%, rgba(166, 164, 164, 0) 100%);
+}
+#nav-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#nav-menu.navbar-default .navbar-toggle:focus .icon-bar {
+  background-color: #bdbdbd;
+}
+
+/* blues */
+#nav-menu.navbar-default .navbar-brand {
+  color: rgba(51, 122, 183, 1);
+}
+#nav-menu.navbar-default .navbar-toggle .icon-bar,
+#nav-menu.navbar-default .navbar-toggle:hover,
+#nav-menu.navbar-default .navbar-toggle:focus {
+  background-color: #337ab7;
 }
 
 #nav-menu.navbar-default .navbar-nav > .active .nav-hover-style,
@@ -86,30 +97,18 @@ ul {
   background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(51, 122, 183, 1) 100%);
 }
 
-#nav-menu.navbar-default .navbar-toggle .icon-bar,
-#nav-menu.navbar-default .navbar-toggle:hover,
-#nav-menu.navbar-default .navbar-toggle:focus {
-  background-color: #337ab7;
-}
-
-#nav-menu.navbar-default .navbar-toggle:hover .icon-bar,
-#nav-menu.navbar-default .navbar-toggle:focus .icon-bar {
-  background-color: #bdbdbd;
-}
-
-
 /* //////////// Jumbotron Styles //////////// */
 
 .jumbotron {
   /*max-width: 1100px;*/
-  max-width: 800px;
+  max-width: 700px;
   margin:0 auto;
   padding-top: 30px;
   padding-bottom: 10px;
   border-radius: 10px  !important;
   z-index: 2;
   margin-bottom: 5px !important;
-  background-color: rgba(217, 217, 217, 0.85);
+  background-color: rgba(217, 217, 217, 0.45);
 }
 
 .jumbotron > h1 {
@@ -375,6 +374,11 @@ div > #locations-dropdown.container {
   text-align: center;
 }
 
+#sponsors > img {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
 .footer {
   font-weight: 700;
   padding: 10px;
@@ -391,14 +395,20 @@ div > #locations-dropdown.container {
 
 #contact-modal-button {
   color: rgb(119, 119, 119);
-  background-image: linear-gradient(rgb(237, 237, 237) 0%, rgb(189, 189, 188) 100%);
-  background-color: rgba(189, 189, 188, 1);
+  /*background-image: linear-gradient(rgb(237, 237, 237) 0%, rgb(189, 189, 188) 100%);*/
+  background-color: rgba(189, 189, 188, 0);
+  border: 0;
 }
 
 .modal-title {
   text-align: center;
   font-size: 26px;
   font-weight: 600;
+}
+
+/* padding inside contact modal textbox */
+textarea {
+  padding: 10px;
 }
 
 textarea #message {
@@ -412,8 +422,10 @@ textarea #message {
   text-align: left; 
 }
 
+/* align modal form-input-field and center text */
 .select-snowsport {
   max-width: 62%;
+  text-indent: 80px;
 }
 
 form {
@@ -427,6 +439,7 @@ label, input, select {
 
 label {
   width: 30%;
+  margin-left: -10px;
   /* positions the label text beside the input */
   text-align: right;
 }
@@ -434,7 +447,7 @@ label {
 label + input,
 label + select {
   width: 60%;
-  margin: 0 5% 0 3%;
+  margin: 0 10% 0 0%
 }
 
 input + input,
