@@ -464,6 +464,7 @@ select {
 .modal-footer .btn+.btn {
   margin-bottom: 0;
   margin-left: 20px;
+  margin-right: 7%;
 }
 
 .modal-backdrop {
@@ -481,8 +482,8 @@ form li {
 .submit-button > .btn {
   padding-top: 7px;
   padding-bottom: 7px;
-  padding-right: 70px;
-  padding-left: 70px;
+  padding-right: 62px;
+  padding-left: 62px;
   font-weight: 600;
 }
 
