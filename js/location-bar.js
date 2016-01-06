@@ -7,7 +7,7 @@ var california = document.getElementById('california');
 
 var californiaResortsArray = ["heavenly", "alpineMeadows", "squawValley", "mammoth"];
 
-var addResortListeners = function() {
+var addCaliforniaListeners = function() {
   for (var i = 0; i < californiaResortsArray.length; i++){
     addEventListeners(californiaResortsArray[i] + "SearchButton");
   }
@@ -21,7 +21,7 @@ var colorado = document.getElementById('colorado');
 
 var coloradoResortsArray = ["vail", "telluride", "keystone", "breckenridge"];
 
-var addResortListeners = function() {
+var addColoradoListeners = function() {
   for (var i = 0; i < coloradoResortsArray.length; i++){
     addEventListeners(coloradoResortsArray[i] + "SearchButton");
   }
@@ -36,7 +36,7 @@ var montana = document.getElementById('montana');
 
 var montanaResortsArray = ["bigSky", "bridgerBowl", "whitefish", "snowbowl"];
 
-var addResortListeners = function() {
+var addMontanaListeners = function() {
   for (var i = 0; i < montanaResortsArray.length; i++){
     addEventListeners(montanaResortsArray[i] + "SearchButton");
   }
@@ -50,7 +50,7 @@ var newMexico = document.getElementById('newMexico');
 
 var newMexicoResortsArray = ["taosSkiValley", "apache", "parajito", "angelFire"];
 
-var addResortListeners = function() {
+var addNewMexicoListeners = function() {
   for (var i = 0; i < newMexicoResortsArray.length; i++){
     addEventListeners(newMexicoResortsArray[i] + "SearchButton");
   }
@@ -64,7 +64,7 @@ var utah = document.getElementById('utah');
 
 var utahResortsArray = ["alta", "solitude", "parkCity", "snowbird"];
 
-var addResortListeners = function() {
+var addUtahListeners = function() {
   for (var i = 0; i < utahResortsArray.length; i++){
     addEventListeners(utahResortsArray[i] + "SearchButton");
   }
@@ -78,7 +78,7 @@ var vermont = document.getElementById('vermont');
 
 var vermontResortsArray = ["killington", "jaysPeak", "smugglersNotch", "stratton"];
 
-var addResortListeners = function() {
+var addVermontListeners = function() {
   for (var i = 0; i < vermontResortsArray.length; i++){
     addEventListeners(vermontResortsArray[i] + "SearchButton");
   }
