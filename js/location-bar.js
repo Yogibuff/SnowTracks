@@ -3,13 +3,14 @@
 /////////////////   California   ////////////////////
 
 var california = document.getElementById('california');
-  california.addEventListener('focus', addResortListeners);
+  california.addEventListener('focus', addCaliforniaListeners);
 
 var californiaResortsArray = ["heavenly", "alpineMeadows", "squawValley", "mammoth"];
 
 var addCaliforniaListeners = function() {
   for (var i = 0; i < californiaResortsArray.length; i++){
     addEventListeners(californiaResortsArray[i] + "SearchButton");
+    console.log(californiaResortsArray[i]);
   }
 };
 
@@ -17,7 +18,7 @@ var addCaliforniaListeners = function() {
 /////////////////   Colorado   ////////////////////
 
 var colorado = document.getElementById('colorado');
-  colorado.addEventListener('focus', addResortListeners);
+  colorado.addEventListener('focus', addColoradoListeners);
 
 var coloradoResortsArray = ["vail", "telluride", "keystone", "breckenridge"];
 
@@ -32,7 +33,7 @@ var addColoradoListeners = function() {
 /////////////////   Montana   ////////////////////
 
 var montana = document.getElementById('montana');
-  montana.addEventListener('focus', addResortListeners);
+  montana.addEventListener('focus', addMontanaListeners);
 
 var montanaResortsArray = ["bigSky", "bridgerBowl", "whitefish", "snowbowl"];
 
@@ -46,7 +47,7 @@ var addMontanaListeners = function() {
 /////////////////   NewMexico   ////////////////////
 
 var newMexico = document.getElementById('newMexico');
-  newMexico.addEventListener('focus', addResortListeners);
+  newMexico.addEventListener('focus', addNewMexicoListeners);
 
 var newMexicoResortsArray = ["taosSkiValley", "apache", "parajito", "angelFire"];
 
@@ -60,7 +61,7 @@ var addNewMexicoListeners = function() {
 /////////////////   Utah   ////////////////////
 
 var utah = document.getElementById('utah');
-  utah.addEventListener('focus', addResortListeners);
+  utah.addEventListener('focus', addUtahListeners);
 
 var utahResortsArray = ["alta", "solitude", "parkCity", "snowbird"];
 
@@ -74,7 +75,7 @@ var addUtahListeners = function() {
 /////////////////   Vermont   ////////////////////
 
 var vermont = document.getElementById('vermont');
-  vermont.addEventListener('focus', addResortListeners);
+  vermont.addEventListener('focus', addVermontListeners);
 
 var vermontResortsArray = ["killington", "jaysPeak", "smugglersNotch", "stratton"];
 
