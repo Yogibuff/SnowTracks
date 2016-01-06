@@ -460,6 +460,10 @@ select {
   float: right;
 }
 
+#snowsport-input {
+  margin-bottom: 20px;
+  margin-top: 7px;
+}
 
 .modal-footer .btn+.btn {
   margin-bottom: 0;
@@ -503,8 +507,6 @@ form li {
 .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus, .navbar-nav>.open>a {
   background-color: transparent !important;
 }
-
-
 
 .hvr-push {
   display: inline-block;
