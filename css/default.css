@@ -183,16 +183,18 @@ hr + hr {
 #map {
   position: absolute;
   top: 60px;
-  left: 7%;
+  left: 8%;
   right: 7%;
-  max-width: 1000px;
+  max-width: 1015px;
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
+  width: 77%;
   height: 400px;
-  width: 50%;
   margin: auto auto;
   z-index: 1;
+  /* faster map rendering */
+  transform: translate3d(0,0,0);
 }
 
 #map div {
