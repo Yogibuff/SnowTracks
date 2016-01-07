@@ -20,6 +20,7 @@ ul {
 #page-container {
   background-image: url("../images/snowy-mountains.jpg");
   /* Fill background */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   /* Preserve aspet ratio */
@@ -27,6 +28,10 @@ ul {
   min-height: 100%;
   padding-left: 0;
   padding-right: 0;
+  
+  /* Hardward Accelerated CSS - increases FPS, prevents lagging caused by the browser 
+ Instead, recruit the device's GPU to render the background image as the user scrolls */
+  transform: translate3d(0,0,0);
 }
 
 
@@ -379,10 +384,80 @@ div > #locations-dropdown.container {
   padding-left: 10px;
 }
 
+/* Footer and Social Media font-awesome icons */
+
 .footer {
   font-weight: 700;
   padding: 10px;
 }
+
+.social {
+  margin: 0;
+  padding: 0;
+}
+
+.social ul {
+  margin: 0;
+  padding: 5px;
+}
+
+.spacing-social-icons {
+  margin: 4px;
+}
+
+.center-icons {
+  padding-left: 18%;
+}
+
+.social ul li {
+  margin: 5px;
+  list-style: none outside none;
+  display: inline-block;
+}
+
+.social i {
+  width: 40px;
+  height: 40px;
+  color: #FFF;
+  background-color: #909AA0;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 14px;
+  border-radius: 50%;
+  transition: all ease 0.2s;
+}
+
+.social i:hover {
+  color: #FFF;
+  text-decoration: none;
+  transition: all ease 0.2s;
+}
+
+/* color social media icons on hover */
+.social .fa-facebook:hover {
+  background: #4060A5;
+}
+
+.social .fa-twitter:hover {
+  background: #00ABE3;
+}
+
+.social .fa-google-plus:hover {
+  background: #e64522;
+}
+
+.social .fa-github:hover {
+  background: #343434;
+}
+
+.social .fa-linkedin:hover {
+  background: #0094BC;
+}
+
+#footer-left, #footer-top-link {
+  padding-top: 12px;
+}
+
 
 
 /* Modal Styles */
