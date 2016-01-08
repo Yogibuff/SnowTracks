@@ -1,5 +1,14 @@
 // Links for the 4 Top Resorts across 6 States //
 
+/* 
+
+use mongoDB to hold a database filled with a BSON collection of 24 resorts.
+(24 items in DB) Database includes collections and documents containing:
+resort names, state, links to make a map, and SnoCountry API URL 
+The API URL can this way be set up with state and resort id in place - to be used in api.js 
+
+*/
+
 /*  State
     resort name : map URL
     embedded map image (width 640px by height 400px) showing the featured resort name, pictures, directions, and links to all other Google Map details
@@ -81,4 +90,3 @@
 
 // stratton : https://goo.gl/maps/TGBQ9eGL8oy
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2912.5749957576986!2d-72.9103170848588!3d43.11344579518308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e05805a936c2c1%3A0xad64bc779caf063e!2sStratton+Mountain+Resort!5e0!3m2!1sen!2sus!4v1451901214650" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-
