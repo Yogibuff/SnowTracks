@@ -10,7 +10,7 @@ $(document.body).ready(function () {
   $("#montana").on('click', function () {
     newLocation(46.98927,-114.01456);
   });
-  $("#new-mexico").on('click', function () {
+  $("#newMexico").on('click', function () {
     newLocation(36.39309,-105.28501);
   });
   $("#utah").on('click', function () {
