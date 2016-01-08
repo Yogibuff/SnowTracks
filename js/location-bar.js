@@ -1,16 +1,17 @@
-/* location bar event listeners */
+/* Location bar event listeners that Request Weather */
 
 /////////////////   California   ////////////////////
 
 var california = document.getElementById('california');
-  california.addEventListener('focus', addCaliforniaListeners);
+california.addEventListener('focus', addCaliforniaListeners);
 
-var californiaResortsArray = ["heavenly", "alpineMeadows", "squawValley", "mammoth"];
+var californiaResortsObject = ["heavenly", "alpineMeadows", "squawValley", "mammoth"];
 
 var addCaliforniaListeners = function() {
-  for (var i = 0; i < californiaResortsArray.length; i++){
-    addEventListeners(californiaResortsArray[i] + "SearchButton");
-    console.log(californiaResortsArray[i]);
+  for (var i = 0; i < californiaResortsObject.length; i++){
+    (californiaResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
 
@@ -18,13 +19,15 @@ var addCaliforniaListeners = function() {
 /////////////////   Colorado   ////////////////////
 
 var colorado = document.getElementById('colorado');
-  colorado.addEventListener('focus', addColoradoListeners);
+colorado.addEventListener('focus', addColoradoListeners);
 
-var coloradoResortsArray = ["vail", "telluride", "keystone", "breckenridge"];
+var coloradoResortsObject = ["vail", "telluride", "keystone", "breckenridge"];
 
 var addColoradoListeners = function() {
-  for (var i = 0; i < coloradoResortsArray.length; i++){
-    addEventListeners(coloradoResortsArray[i] + "SearchButton");
+  for (var i = 0; i < coloradoResortsObject.length; i++){
+    (coloradoResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
 
@@ -33,13 +36,15 @@ var addColoradoListeners = function() {
 /////////////////   Montana   ////////////////////
 
 var montana = document.getElementById('montana');
-  montana.addEventListener('focus', addMontanaListeners);
+montana.addEventListener('focus', addMontanaListeners);
 
-var montanaResortsArray = ["bigSky", "bridgerBowl", "whitefish", "snowbowl"];
+var montanaResortsObject = ["bigSky", "bridgerBowl", "whitefish", "snowbowl"];
 
 var addMontanaListeners = function() {
-  for (var i = 0; i < montanaResortsArray.length; i++){
-    addEventListeners(montanaResortsArray[i] + "SearchButton");
+  for (var i = 0; i < montanaResortsObject.length; i++){
+    (montanaResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
 
@@ -47,13 +52,15 @@ var addMontanaListeners = function() {
 /////////////////   NewMexico   ////////////////////
 
 var newMexico = document.getElementById('newMexico');
-  newMexico.addEventListener('focus', addNewMexicoListeners);
+newMexico.addEventListener('focus', addNewMexicoListeners);
 
-var newMexicoResortsArray = ["taosSkiValley", "apache", "parajito", "angelFire"];
+var newMexicoResortsObject = ["taosSkiValley", "apache", "parajito", "angelFire"];
 
 var addNewMexicoListeners = function() {
-  for (var i = 0; i < newMexicoResortsArray.length; i++){
-    addEventListeners(newMexicoResortsArray[i] + "SearchButton");
+  for (var i = 0; i < newMexicoResortsObject.length; i++){
+    (newMexicoResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
 
@@ -61,13 +68,15 @@ var addNewMexicoListeners = function() {
 /////////////////   Utah   ////////////////////
 
 var utah = document.getElementById('utah');
-  utah.addEventListener('focus', addUtahListeners);
+utah.addEventListener('focus', addUtahListeners);
 
-var utahResortsArray = ["alta", "solitude", "parkCity", "snowbird"];
+var utahResortsObject = ["alta", "solitude", "parkCity", "snowbird"];
 
 var addUtahListeners = function() {
-  for (var i = 0; i < utahResortsArray.length; i++){
-    addEventListeners(utahResortsArray[i] + "SearchButton");
+  for (var i = 0; i < utahResortsObject.length; i++){
+    (utahResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
 
@@ -75,12 +84,14 @@ var addUtahListeners = function() {
 /////////////////   Vermont   ////////////////////
 
 var vermont = document.getElementById('vermont');
-  vermont.addEventListener('focus', addVermontListeners);
+vermont.addEventListener('focus', addVermontListeners);
 
-var vermontResortsArray = ["killington", "jaysPeak", "smugglersNotch", "stratton"];
+var vermontResortsObject = ["killington", "jaysPeak", "smugglersNotch", "stratton"];
 
 var addVermontListeners = function() {
-  for (var i = 0; i < vermontResortsArray.length; i++){
-    addEventListeners(vermontResortsArray[i] + "SearchButton");
+  for (var i = 0; i < vermontResortsObject.length; i++){
+    (vermontResortsObject[i] + "SearchButton").addEventListener('click', function() {
+      // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+    });
   }
 };
