@@ -31,5 +31,4 @@ $(document.body).ready(function () {
       $('#map').css('opacity', '1');
     }
   });
-  
 });

@@ -1,30 +1,51 @@
-// express app
+///////////////////////////////////////////
+//  Weather requests to SnoCountry API  //
+/////////////////////////////////////////
+
+// load Express.js
 var express = require('express'),
     app = express(),
-    request = require('request'),
     router = express.Router();
-
-// body-parser middlewear, to be used with SnoCountry API JSON returned data
+// load node's package for HTTP requests to SnoCountry API
+var request = require('request');
+// load body-parser middlewear for returned JSON data
 var bodyParser = require('body-parser'),
     parseText = bodyParser.text();
 
-router.post( '/', function(req, res) {
-  // SnoCountry API reqest URL format: http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=ca&resortType=alpine&output=json
-  // (modifiers attached state, ex: '&states=ca', and resort id, ex: &ids=802007)
-  // Add '&output=json' to end of SnoCountry API for Json formatted response
-  // var acceptableStates = statesArray ['ca', 'co', 'mt', 'nm', 'ut', 'vt'];
-  // var requestedState = req.body
+// var resortId = [
+// // testing queries of Colorado resort ids
+// 303022,
+// 303023,
+// 303014,
+// 303007
+// ];
 
-  var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=" + requestedState + "&resortType=alpine" + "&output=json";
+// var searchColoradoResort = function() {
+//   for (var i = 0; i < resortId.length; i++){
+//     (resortId[i] + "SearchButton").addEventListener('click', function() {
+//       // request weather from SnoCountry api using resort id, based on the object[#] of clicked resort
+//       var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example" + "&ids=" + resortId[i] + "&output=json";
+//     });
+//   }
+// };
+
+
+
+/*  response to POST requests on the root '/' route  */
+router.post('/', parseText, function(req, res) {
+  // testing query on Vail, id 303023, working URL: http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&ids=303023&output=json
+  var resortId = 303023;
+  var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example" + "&ids=" + resortId + "&output=json";
+
   request( SnoCountryQuery, function(error, response, body) {
-    // if no error and status code 200, log success and send the recieved .json file to body-parser for stringify'd text response
     if ( !error && response.statusCode == 200 ) {
-      console.log('SnoCountry successfully reached. Status code: ' + response.statusCode);
-      res.send( parseText(body) );
+      console.log('SnoCountry connection successful. Status code: ' + response.statusCode);
+      // send the recieved .json file to body-parser to stringify JSON response
+      res.send(parseText(body));
     }
     else {
       console.log(error);
-      console.log('Status code: ' + response.statusCode);
+      console.log('Error reaching SnoCountry. Status code: ' + response.statusCode);
     }
   });
 });
@@ -32,54 +53,46 @@ router.post( '/', function(req, res) {
 module.exports = router;
 
 
-// Syntax for snow conditions query for a specific resort:
+// SnoCountry API Full URL format: http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=ca&resortType=alpine&output=json
+// modifiers attached: state '&states=ca', non-crosscountry ski resorts only "&resortType=alpine", and fill in resort id &ids=######) + JSON formatted response '&output=json'
+
+// Examples of Syntax for snow conditions query for a specific resort:
 // URL: http://feeds.snocountry.net/conditions.php?...{Request Parameters}...
 // Or by State, using getResortList (returns html default, or add &output=JSON:
 // URL: http://feeds.snocountry.net/getResortList.php?...{Request Parameters}...
+// http://feeds.snocountry.net/conditions.php?apiKey=xxx&ids=802007
 
+///////////////////////////////////////////////
+/*  Resort ID's for SnoCountry API query URL /
+/////////////////////////////////////////////
 
+Heavenly 916004
+Alpine Meadow 916001
+Squaw Valley 916011
+Mammoth 619002
 
+Telluride 303022
+Vail 303023
+Keystone 303014
+Breckenridge 303007
 
+Big Sky 406002
+Bridger Bowl 406003
+Whitefish  406001
+Montana Snowball 406008
 
-// router.post( '/', function(req, res) {
-  // SnoCountry API reqest URL format: http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example&states=ca&resortType=alpine&output=json
-  // (modifiers attached on the end, ex: '&states=ca')
-// var allOptions = statesArray ['ca', 'co', 'mt', 'nm', 'ut', 'vt'];
-// var requested = req.body
-// Option 1 for checking if req.body contains an accepted state
-// returns true if requested state is in the array, and false otherwise
+Angel Fire 505001
+Ski Apache 505007
+Pajarito 505002
+Taos 505009
 
-//   statesArray.prototype.contains = function ( requested ) {
-//      for (i in statesArray) {
-//          if (statesArray[i] == requested) 
-//           return true;
-//      }
-//      return false;
-//   };
+Alta 801001
+Park City 801006
+Solitude 801011
+Snowbird 801010
 
-// // Option 2
-// this +for loop to iterate through the array of state options looking for a match: 'true'
-//   var stateExists = function() {
-//     if (req.body) {
-//       statesArray.prototype.exists = function (requested) {
-//         for (var i = 0; i < this.length; i++) {
-//         if (this[i] == requested) return true;
-//         }
-//         else {
-//         return false;
-//       }
-//   };
-//   // if (match found between req.body and a state in statesArray): break
-//     console.log("Didn't send to SnoCountry API, State requested did not match any available options.");
-//     }
-//   }
-
-
-//////////////  Promises Synchronous order of operations  //////////////
-
-// FIRST: User clicks a State which is matched on the back-end to a latitude / longitude value pair, 
-//       location: app.js, contains a list of the 6 States (UT, CO, CA, VT, MT, NM) with stored lat/long data 
-//       which is stored in variables for click event to be sent to map initializing function in app.js
-// THEN ASYNCHRONOUSLY: send request Google Maps API and post results into the DOM, remove the middle section jumbotron text
-//       and replace with a 640px wide by 400px tall map of the selection in the page's center.
-// AT THE SAME TIME: request SnoCountry.com Snow Reports (left side of their website: #ski areas open, #areas with new snow, Biggest Snowfalls...) 
+Killington 802007
+Jay Peak 802006
+Smuggs 802016
+Stratton 802019
+*/
