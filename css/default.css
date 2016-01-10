@@ -17,7 +17,7 @@ ul {
   list-style-type: none;
 }
 
-#page-container {
+#page-container, .footer {
   background-image: url("../images/snowy-mountains.jpg");
   /* Fill background */
   background-attachment: fixed;
@@ -30,7 +30,7 @@ ul {
   padding-right: 0;
   
   /* Hardward Accelerated CSS - increases FPS, prevents lagging caused by the browser 
- Instead, recruit the device's GPU to render the background image as the user scrolls */
+ recruit the device's GPU to render the background image as the user scrolls */
   transform: translate3d(0,0,0);
 }
 
@@ -84,7 +84,6 @@ ul {
   background-color: #bdbdbd;
 }
 
-/* blues */
 #nav-menu.navbar-default .navbar-brand {
   color: rgba(51, 122, 183, 1);
 }
@@ -101,6 +100,7 @@ ul {
   background-color: rgba(51, 122, 183, 1);
   background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(51, 122, 183, 1) 100%);
 }
+
 
 /* //////////// Jumbotron Styles //////////// */
 
@@ -201,7 +201,7 @@ hr + hr {
   cursor: default;
 }
 
-/* on 'click' event sets #map's opacity: 0 */
+/* on normal curson when map is removed */
 #remove-map {
   cursor: pointer;
 }
@@ -367,8 +367,8 @@ div > #locations-dropdown.container {
   margin-bottom: 10px;
 }
 
-/*  END Locations Dropdown Menu Styles  */
 
+/* //////////// Sponsors Styles //////////// */
 
 #sponsors {
   width: 100%;
@@ -386,11 +386,12 @@ div > #locations-dropdown.container {
   padding-left: 10px;
 }
 
-/* Footer and Social Media font-awesome icons */
+
+/* //////////// Footer and Social Media Styles //////////// */
 
 .footer {
-  font-weight: 700;
   padding: 10px;
+  font-weight: 700;
 }
 
 .social {
@@ -461,8 +462,7 @@ div > #locations-dropdown.container {
 }
 
 
-
-/* Modal Styles */
+/* //////////// Modal Styles //////////// */
 
 #contact-btn-align {
   padding-top: 8px  !important;
@@ -568,10 +568,8 @@ form li {
   font-weight: 600;
 }
 
-/* END modal styles */
 
-
-/* BEGIN Button Animations */
+/* //////////// Button Animations //////////// */
 
 /* social media icons - on hover bounce larger twice */
 .hvr-bounce-in {
@@ -620,10 +618,9 @@ form li {
 }
 
 
-
 /* //////////// Media Queries //////////// */
 
-/* hide Jumbotron bulleted content */
+/* hide Jumbotron bulleted content below 1100px */
 @media (max-width: 1100px) {
   .jumbotron > #homepage-list , #content-split {
     display: none;
