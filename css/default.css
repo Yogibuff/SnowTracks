@@ -573,6 +573,26 @@ form li {
 }
 
 
+/* //////////// Custom 404 Page Styles //////////// */
+.missing-page {
+  background-image: url("../images/snowtracks-404-background.png");
+  /* Fill background */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  height: 900px;
+  padding-left: 0;
+  padding-right: 0;
+  transform: translate3d(0,0,0);
+}
+
+.no-background {
+  background-image: none  !important;
+}
+
+
 /* //////////// Button Animations //////////// */
 
 /* social media icons - on hover bounce larger twice */
