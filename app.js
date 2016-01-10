@@ -1,4 +1,6 @@
-/* NOTE: Does NOT work when placed in the js folder, even when adding /../ before routes! */
+////////////////////////
+//  Express Routers  //
+//////////////////////
 
 // require the express module and set host port
 var express = require('express'),
@@ -9,8 +11,8 @@ var express = require('express'),
 app.use(express.static(__dirname));
 
 // require api.js for implementation of SnoCountry API's weather queries
-// var api = require('/api.js');
-// app.use('/api', api);
+// var api = require('./js/api.js');
+// app.use('api.js', api);
 
 
   ////////////////////////////////////////////////////////
