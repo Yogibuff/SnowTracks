@@ -576,16 +576,12 @@ form li {
 /* //////////// Custom 404 Page Styles //////////// */
 .missing-page {
   background-image: url("../images/snowtracks-404-background.png");
-  /* Fill background */
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  /* Preserve aspet ratio */
-  min-width: 100%;
-  height: 900px;
+  background-repeat: no-repeat;
+  height: 800px;
+  max-width: 1360px;
   padding-left: 0;
   padding-right: 0;
-  transform: translate3d(0,0,0);
 }
 
 .no-background {
@@ -650,7 +646,7 @@ form li {
     display: none;
   }
   .footer {
-    padding-top: 90px;
+    padding: 10px;
   }
 }
 
@@ -673,6 +669,23 @@ form li {
     width: auto;
     max-width: 600px;
     padding-right: 20px;
+  }
+}
+
+/* positioning social media icons in footer under 900px */
+@media (min-width: 650px) and (max-width: 900px) {
+  .center-icons {
+    padding-left: 50%;
+  }
+}
+@media (min-width: 574px) and (max-width: 649px) {
+  .center-icons {
+    padding-left: 26%;
+  }
+}
+@media (max-width: 573px) {
+  .center-icons {
+    padding-left: 15%;
   }
 }
 
@@ -716,6 +729,21 @@ form li {
     width: auto;
     max-width: 600px;
     padding-right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  #nav-menu {
+    background-color: rgba(250, 250, 250, 0.25) !important;
+  }
+  .navbar-collapse {
+    border-color: rgba(69, 69, 69, .3) !important;
+  }
+  #contact-modal-button, .navbar-nav > li > a {
+    color: rgb(72, 72, 72) !important;
+  }
+  #contact-modal-button, .navbar-nav > li .nav-hover-style {
+    color: rgb(69, 69, 69) !important;
   }
 }
 
