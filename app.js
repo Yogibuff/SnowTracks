@@ -14,6 +14,9 @@ app.use(express.static(__dirname));
 // var api = require('./js/api.js');
 // app.use('api.js', api);
 
+app.use(function(req, res, next) {
+  res.status(404).sendFile(__dirname + '/custom-404.html');
+});
 
   ////////////////////////////////////////////////////////
  // Hosted locally & listens for requests on port 3000 //
