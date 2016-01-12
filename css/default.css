@@ -398,6 +398,8 @@ div > #locations-dropdown.container {
   font-weight: 700;
   display: inline-block;
   padding-bottom: 40px;
+  /* remove bottom margin from body */
+  margin-bottom: -10px;
 }
 
 .footer-link {
