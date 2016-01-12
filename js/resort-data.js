@@ -2,16 +2,19 @@
 
 /* 
 
-use mongoDB to hold a database filled with a BSON collection of 24 resorts.
-(24 items in DB) Database includes collections and documents containing:
-resort names, state, links to make a map, and SnoCountry API URL 
-The API URL can this way be set up with state and resort id in place - to be used in api.js 
-
-*/
-
-/*  State
-    resort name : map URL
-    embedded map image (width 640px by height 400px) showing the featured resort name, pictures, directions, and links to all other Google Map details
+Could use mongoDB to hold a database filled with a collection of 24 resorts (items in DB)
+Database includes 6 collections of States with documents containing 4 Resorts per state
+State documents contain: resort names, state, links to make a map, and possibly SnoCountry API request URL - to be used in api.js 
+Locations  DB
+  State name  Collection
+    Resort name  Document
+      attribute :  Value 
+      Google : map URL 
+        (width 640px by height 400px) showing the featured resort name, pictures, directions, and links to all other Google Map details
+      LatLng : 39.638952,-105.871382  (use with Google Maps to place the pins accurately):
+        in API response as:
+        "latitude": "39.638952",
+        "longitude": "-105.871382",
 */
 
 /* California */
@@ -82,7 +85,7 @@ The API URL can this way be set up with state and resort id in place - to be use
 // killington : https://goo.gl/maps/2LppvdhvH7v
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2576.299701439857!2d-72.80460900973839!3d43.617790281789766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x151ba175c7bce8bd!2sKillington+Ski+Area!5e0!3m2!1sen!2sus!4v1451901093328" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 
-// jay's peak : https://goo.gl/maps/pcU13aYQDcv
+// jay peak : https://goo.gl/maps/pcU13aYQDcv
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5648.862481757562!2d-72.50737147407847!3d44.93490066145588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb60ed7e10e19f1%3A0x7c7be953a3190d61!2sJay+Peak+Resort!5e0!3m2!1sen!2sus!4v1451901135291" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 // smugglers notch : https://goo.gl/maps/LEfWCQudKq32
