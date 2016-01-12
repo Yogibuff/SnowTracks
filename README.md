@@ -7,7 +7,7 @@ We love snow and want to help you find the best resorts, do quick vacation plann
 **It's a** mashup of Google Maps API with SnoCountry API in a single-page website **for** winter sports enthusiasts and vacation travel planners 
 **who** want to quickly view the snow conditions with a map of relevent activities and resort facilities in a given location.
 
-<img src="images/snowtracks-map-sponsors-demo.png">
+<img src="images/snowtracks-map-demo.png">
 
 >The Google Maps API allow for the embedding of Google Maps onto web pages of outside developers, using a simple JavaScript interface or a Flash interface.
 
