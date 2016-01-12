@@ -394,20 +394,11 @@ div > #locations-dropdown.container {
 /* //////////// Footer and Social Media Styles //////////// */
 
 .footer {
-  height: 30px;
+  padding: 10px;
   font-weight: 700;
-  display: inline-block;
-  padding-bottom: 40px;
 }
 
-.footer-link {
-  padding-top: 12px;
-  margin-bottom: 0;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
-/*.social {
+.social {
   margin: 0;
   padding: 0;
 }
@@ -419,44 +410,16 @@ div > #locations-dropdown.container {
 
 .spacing-social-icons {
   margin: 4px;
-}*/
+}
 
-/*.center-icons {
+.center-icons {
   padding-left: 18%;
-}*/
-
-.scroll-up {
-  font: normal normal normal 30px/1 FontAwesome;
-  margin: 0;
-  color: white;
-  text-align: center;
-  background-color: #373737;
-  opacity: .9;
-  height: 30px;
-  width: 40px;
-  display: none;
 }
 
-#back-to-top {
-  position: fixed;
-  right: 15px;
-  bottom: 10px;
-  margin: 0;
-  z-index: 1001;
-}
-
-.social ul > li {
-  padding-bottom: 5px;
-}
-
-.social ul {
-  position: fixed;
-  top: 100px;
-  right: 10px;
+.social ul li {
   margin: 5px;
   list-style: none outside none;
-  display: block;
-  z-index: 1000;
+  display: inline-block;
 }
 
 .social i {

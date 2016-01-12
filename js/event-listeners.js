@@ -31,4 +31,19 @@ $(document.body).ready(function () {
       $('#map').css('opacity', '1');
     }
   });
+  // back to top button, hidden on load and appears only when needed
+  $("#back-to-top").css("display", "none");
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 170) {
+      $('#back-to-top').fadeIn();
+    } else {
+      $('#back-to-top').fadeOut();
+    }
+  });
+  $('#back-to-top').click(function () {
+    $("html, body").animate( {
+      scrollTop: 0
+    }, 800);
+    return false;
+  });
 });
