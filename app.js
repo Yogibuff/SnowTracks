@@ -9,7 +9,7 @@ var express = require('express'),
 // require api.js for implementation of SnoCountry API's weather queries
     api = require('./js/api.js');
 
-// app.use('/api', api);
+app.use('/api', api);
 
 // set static router to retrieve HTML, CSS, JS, Images
 app.use(express.static(__dirname));
