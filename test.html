@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- JQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Bootstrap and Font-Awesome libraries -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <!-- External CSS -->
+  <link href="css/test.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Della+Respira' rel='stylesheet' type='text/css'>
+  <!-- Google Maps API -->
+  <script src="js/init-map.js" type="text/javascript"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNR23T6jeO0hXU_Xd0wspLkazWIIxLuyY&callback=initMap"></script>
+  <title>SnowTracks: Home</title>
+</head>
+<body>
+  <div class="social">
+    <ul id="fixed-icons">
+      <li class="center-icons"><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+      <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+      <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-github"></i></a></li>
+      <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+      <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+    </ul>
+  </div>
+
+  <div id="back-to-top">
+    <a href="#top"><i class="scroll-up hvr-bounce-in fa fa-chevron-up"></i></a>
+  </div>
+
+  <div class="container-fluid" id="page-container">
+    
+  <!-- BEGIN Navbar -->
+    <div id="nav-menu" class="navbar navbar-default " role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="navbar-brand hvr-bounce-to-top">
+            <a href="index.html"><img id="nav-logo" src="images/logo-tiny.png">SnowTracks ®</a>
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-dropdown">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-dropdown">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-hover-style hvr-bounce-to-top" href="about-us.html">About Us</a>
+            </li>
+            <li><a class="nav-hover-style hvr-bounce-to-top" id="remove-map" href="#"><i class="fa fa-map-marker"></i> Remove Map</a>
+            </li>
+            <li><a class="nav-hover-style hvr-bounce-to-top" id="show-sponsors" href="#sponsors"><i class="fa fa-globe"></i> Sponsors</a>
+            </li>
+            <li class="hvr-bounce-to-top"><a href="#" id="contact-btn-align"><i class="fa fa-envelope"></i> 
+            <button type="button" class="btn btn-default btn-md" id="contact-modal-button" data-toggle="modal" data-target="#contact-Modal">Contact</button></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- END Navbar -->
+
+    <div class="header middle-content">
+      <div class="container" id="map-parent">
+        <!-- becomes visible when user clicks a State, which initializes the map generating function and displays this div -->
+        <div id="map" style="opacity: 0"></div>
+        <div class="jumbotron text-center"> <!-- becomes hidden when user selects a State -->
+          <h1 id="site-name"><img src="images/logo-tiny.png" id="logo">
+          SnowTracks</h1>
+          <h4>The <em>fastest</em> way to compare winter vacation destinations</h4>
+          <hr id="content-split">
+          <hr id="content-split">
+          <ul id="homepage-list">
+            <li><h4 class="welcome-text">Click any State below to begin!</h4></li>
+          </ul>
+          <br>
+        </div>
+      </div> <!-- close .container -->
+    </div> <!-- close .header -->
+
+  <!-- Animated Dropdown Menu - Top Locations & Resorts -->
+    <div class="container" id="locations-dropdown">
+      <ul id="locations_menu" class="locations_menu"> <!-- both needed for animation -->
+        <li class="states california" id="california">
+          <a>
+            <img src="images/california.jpg" alt="California"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">California</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="ca-resorts resorts locations_resorts text-center">Resorts and Activities</div>
+            <a id="heavenlySearchButton" href="https://goo.gl/maps/Z1fYLwbjT1o" target="_blank">Heavenly</a>
+            <a id="alpineMeadowsSearchButton" href="https://goo.gl/maps/QfaH3dkJ2H82" target="_blank">Alpine Meadows</a>
+            <a id="squawValleySearchButton" href="https://goo.gl/maps/zkGrtgyMgbD2" target="_blank">Squaw Valley</a>
+            <a id="mammothSearchButton" href="https://goo.gl/maps/GftQXeFNAK32" target="_blank">Mammoth</a>
+          </div>
+        </li>
+        <li class="states colorado" id="colorado">
+          <a>
+            <img src="images/colorado.jpg" alt="Colorado"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name">Colorado</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <button type="submit" class= "learnButton"<a href="#" id="tellurideSearchButton">Vail Test</a></button>
+            <a href="#" id="vailSearchButton">Telluride</a>
+            <a href="#" id="keystoneSearchButton">Keystone</a>
+            <a href="#" id="breckenridgeSearchButton">Breckenridge</a>
+          </div>
+        </li>
+        <li class="states" id="montana">
+          <a>
+            <img src="images/montana.jpg" alt="Montana"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name" id="align-mt">Montana</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <a href="#" id="bigSkySearchButton">Big Sky</a>
+            <a href="#" id="bridgerBowlSearchButton">Bridger Bowl</a>
+            <a href="#" id="whitefishSearchButton">Whitefish</a>
+            <a href="#" id="snowbowlSearchButton">Snowbowl</a>
+          </div>
+        </li>
+        <li class="states" id="newMexico">
+          <a>
+            <img src="images/new-mexico.jpg" alt="New Mexico"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name" id="align-nm">New Mexico</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <a href="#" id="taosSkiValley">Taos Ski Valley</a>
+            <a href="#" id="apache">Apache</a>
+            <a href="#" id="parajito">Pajarito</a>
+            <a href="#" id="angelFire">Angel Fire</a>
+          </div>
+        </li>
+        <li class="states" id="utah">
+          <a>
+            <img src="images/utah.jpg" alt="Utah"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name" id="align-utah">Utah</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <a href="#" id="alta">Alta</a>
+            <a href="#" id="solitude">Solitude</a>
+            <a href="#" id="parkCity">Park City</a>
+            <a href="#" id="snowbird">Snowbird</a>
+          </div>
+        </li>
+        <li class="states" id="vermont">
+          <a>
+            <img src="images/vermont.jpg" alt="Vermont"/>
+            <span class="locations_active"></span>
+            <span class="locations_wrap">
+              <span class="locations_name" id="align-vt">Vermont</span>
+              <span class="locations_resorts">Powder Report</span>
+            </span>
+          </a>
+          <div class="locations_box">
+            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <a href="#" id="killington">Killington</a>
+            <a href="#" id="jaysPeak">Jay Peak</a>
+            <a href="#" id="smugglersNotch">Smugglers' Notch</a>
+            <a href="#" id="stratton">Stratton</a>
+          </div>
+        </li>
+      </ul>
+    </div> <!-- close .container #locations-dropdown -->
+
+    <div class="container" id="sponsors">
+    </div>
+
+  </div> <!-- close .container-fluid #page-container -->
+
+  <!-- BEGIN Footer includes social media icons that color on hover -->
+  <div class="footer">
+    <p class="pull-left footer-link">&copy; 2015 SnowTracks, LLC. &middot; <a href="custom-404.html">Privacy</a> &middot; <a href="custom-404.html">Terms of Use</a></p>
+  </div>
+<!--         <li class="center-icons"><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+        <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+        <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-github"></i></a></li>
+        <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-linkedin"></i></a></li>
+        <li><a class="hvr-bounce-in spacing-social-icons" href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+ -->      </ul>
+    </div>
+  </div> <!-- close .footer -->
+  
+  <!-- BEGIN Contact Modal -->
+  <div class="modal fade" id="contact-Modal" tabindex="-10" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Contact the Developer</h4>
+        </div> <!-- close .modal-header -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <form action="index.html" method="post">
+                <legend style="text-align: center;">Enter Your Information:</legend>
+                <ol class="form-alignment-table">
+                  <li>
+                  <div class="form group">
+                    <div class="form-input-field">
+                      <label class="text-center">Name:</label>
+                      <input id="required" type="text" name="name" maxlength="30" placeholder="required field" class="text-center">
+                    </div>
+                  </div>
+                  </li>
+                  <br>
+                  <li>
+                  <div class="form group">
+                    <div class="form-input-field">
+                      <label class="text-center">Email:</label>
+                      <input id="required" type="email" name="email" maxlength="30" placeholder="required field" class="text-center">
+                    </div>
+                  </div>
+                  </li>
+                  <br>
+                  <li>
+                  <div class="form group">
+                    <div class="form-input-field">
+                      <label class="text-center">State/Country:</label>
+                      <input id="required" type="text" name="location" maxlength="15" placeholder="required field" class="text-center">
+                    </div>
+                  </div>
+                  </li>
+                  <br>
+                  <li>
+                  <div class="form group">
+                    <div class="form-input-field">
+                      <label class="text-center" id="snowsport-input">Your Snowsport:</label>
+                      <select class="form-control select-snowsport">
+                        <option>Skier</option>
+                        <option>Snowboarder</option>
+                        <option>Snowblader</option>
+                        <option>All of the Above</option>
+                        <option>None</option>
+                      </select>
+                    </div>
+                  </div>
+                  </li>
+                  <br>
+                  <li>
+                  <div class="form group">
+                    <div class="form-input-field">
+                      <label class="remove-alignment">Comments:</label>
+                      <textarea id="message" rows="3" cols="10" placeholder="Enter your brief comment or question here..." name="message" style="margin: 0px; height: 159px; width: 375px;"></textarea>
+                    </div>
+                  </div>
+                  </li>
+                  <br>
+                  <li>
+                  <div class="modal-footer">
+                    <div class="submit-button" id="text-center">
+                      <input type="button" class="btn btn-success hvr-bounce-in" name="submit" value="Submit" data-dismiss="modal">
+                      <button type="button" class="btn btn-warning hvr-bounce-in" id="text-center" data-dismiss="modal">Close</button>
+                    </div> <!-- closes .submit-button -->               
+                  </div> <!-- close .modal footer -->
+                  </li>
+                </ol>
+              </form>
+            </div> <!-- close .col-sm-12 -->
+          </div> <!-- close .row -->
+        </div> <!-- closes .modal body -->
+      </div> <!-- close .modal content -->
+    </div> <!-- closes .modal dialogue -->
+  </div> <!-- close .modal #subscribe-modal -->
+  <!-- END Contact Modal -->
+  
+  <!-- scripts -->
+  <script src="js/location-bar-animations.js"></script>
+  <script src="js/event-listeners.js" type="text/javascript"></script>
+  <script src="js/navbar.js" type="text/javascript"></script>
+</body>
+</html>
