@@ -23,8 +23,8 @@ function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
- // create array of location data within an object locations
- // access the individual resort data to create Map using locations.resorts[i]
+ // create array of objects with locations and links to open a detailed zoomed google map
+ // access the individual resort data below to create Map using locations.resorts[i]
 
   var resorts = [  
     {
@@ -53,21 +53,21 @@ function initMap() {
     },
     {
       name: "Vail",
-      web: "https://goo.gl/maps/PjvSwH5r2DQ2",
+      web: "https://goo.gl/maps/cYMCVLajiHS2",
       Lng: -107.84852,
-      Lat: 39.606148
+      Lat: 39.60614
     }, 
     {
       name: "Telluride",
       web: "https://goo.gl/maps/LMQPdj9qx4N2",
-      Lng: -106.35716,
-      Lat: 38.93758
+      Lng: -107.84852,
+      Lat: 37.93654
     },
     {
       name: "Keystone",
       web: "https://goo.gl/maps/4vSYUqEZRGv",
       Lng: -105.97870,
-      Lat: 39.605335
+      Lat: 39.60533
     },
     {
       name: "Breckenridge",
@@ -175,15 +175,23 @@ function initMap() {
   ]; // close resorts object
 
   for (var i = 0; i < resorts.length; i++) {
-    new google.maps.Marker({
-        position: { lat: resorts[i].Lat, lng: resorts[i].Lng },
-        map: map,
-        title: resorts[i].name
-      });
+    // optional custom blue marker instead of default red marker
+    // var icon = {
+    //     url: 'images/custom-marker.png',
+    // };
+
+    var marker = new google.maps.Marker( {
+      position: { lat: resorts[i].Lat, lng: resorts[i].Lng },
+      map: map,
+      title: resorts[i].name,
+  // insert the custom icon file
+      // icon: icon
+       
+  
+  //  TO DO: add marker info window   
+
+    });
   } 
-
-  // add multiple marker info windows
-
 } // close initMap()
 
 // Used by event-listeners.js
