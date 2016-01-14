@@ -29,8 +29,8 @@ Locations  DB
 
 
 /* Colorado */
-// vail : https://goo.gl/maps/LMQPdj9qx4N2
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3073.934918423417!2d-106.35716038496929!3d39.606148512460265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876a7060c630dbdb%3A0xa7c2cf2d4b45ada2!2sVail+Ski+Resort!5e0!3m2!1sen!2sus!4v1450914214436" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+// vail : https://goo.gl/maps/cYMCVLajiHS2
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3073.9351018996585!2d-106.35716038435226!3d39.60614437946762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876a7060c630dbdb%3A0xa7c2cf2d4b45ada2!2sVail+Ski+Resort!5e0!3m2!1sen!2sus!4v1452712988973" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 // telluride : https://goo.gl/maps/PjvSwH5r2DQ2
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7378830666335!2d-107.84852578501874!3d37.93655351060876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x873ed7fd24b94b9f%3A0x9d02e608ccfc306b!2sTelluride+Ski+Resort!5e0!3m2!1sen!2sus!4v1450914088125" width="640" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
 // keystone : https://goo.gl/maps/4vSYUqEZRGv
