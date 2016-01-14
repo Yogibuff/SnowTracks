@@ -2,18 +2,17 @@
 //          Navbar  Event  Listeners          //
 ////////////////////////////////////////////////
 
-/* Remove Map */
+/* Navbar: Hide and Show Map and Sponsors on click */
 
-// 'Remove Map' on click removes both text and map 
 $(document.body).ready(function () {
+  // Navbar: 'Remove Map' removes both text and map, show on click
   $("#remove-map").on('click', function () {
     $('#map').css('opacity', '0');
     $('.jumbotron').css('display', 'none');
   });
+  // hide sponsors on page load
+  $('#sponsors').css('opacity', '0');
 });
-
-
-/* Sponsors */
 
 var createSponsors = function(src, sponsors) {
   var sponsors = document.getElementById("sponsors");
@@ -22,11 +21,12 @@ var createSponsors = function(src, sponsors) {
   sponsors.appendChild(image);
 };
 
-// add event listener
+// Navbar: 'Sponsors' images show on click
 var showSponsors = document.getElementById("show-sponsors");
-showSponsors.addEventListener("click", function(){
+showSponsors.addEventListener("click", function() {
   if (sponsors.children.length > 1) {
     sponsors.innerHTML = "";
+    sponsors.style.opacity = 0;
   }
   else {
   createSponsors('images/snowbird-logo.png', 'sponsors');
@@ -34,5 +34,7 @@ showSponsors.addEventListener("click", function(){
   createSponsors('images/google-maps-logo.jpg', 'sponsors');
   createSponsors('images/killington-logo.png', 'sponsors');
   createSponsors('images/mammoth-logo.jpg', 'sponsors');
+  // show footer white background on click
+  sponsors.style.opacity = 1;
   }
 }, false);
