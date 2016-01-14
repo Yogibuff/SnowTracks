@@ -91,15 +91,15 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name">California</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
             <div class="ca-resorts resorts locations_resorts text-center">Resorts and Activities</div>
-            <a class="submitResort" data-resortId="916004" id="heavenlySearchButton" href="https://goo.gl/maps/Z1fYLwbjT1o" target="_blank">Heavenly</a>
-            <a class="submitResort" data-resortId="916001" id="alpineMeadowsSearchButton" href="https://goo.gl/maps/QfaH3dkJ2H82" target="_blank">Alpine Meadows</a>
-            <a class="submitResort" data-resortId="916011" id="squawValleySearchButton" href="https://goo.gl/maps/zkGrtgyMgbD2" target="_blank">Squaw Valley</a>
-            <a class="submitResort" data-resortId="619002" id="mammothSearchButton" href="https://goo.gl/maps/GftQXeFNAK32" target="_blank">Mammoth</a>
+            <a class="submitResort" data-resortId="916004" id="heavenlySearchButton" target="_blank">Heavenly</a>
+            <a class="submitResort" data-resortId="916001" id="alpineMeadowsSearchButton" target="_blank">Alpine Meadows</a>
+            <a class="submitResort" data-resortId="916011" id="squawValleySearchButton" target="_blank">Squaw Valley</a>
+            <a class="submitResort" data-resortId="619002" id="mammothSearchButton" target="_blank">Mammoth</a>
           </div>
         </li>
         <li class="states colorado" id="colorado">
@@ -108,7 +108,7 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name">Colorado</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
@@ -125,7 +125,7 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-mt">Montana</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
@@ -142,7 +142,7 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-nm">New Mexico</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
@@ -159,7 +159,7 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-utah">Utah</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
@@ -176,7 +176,7 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-vt">Vermont</span>
-              <span class="locations_resorts">Powder Report</span>
+              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
             </span>
           </a>
           <div class="locations_box">
@@ -281,7 +281,30 @@
     </div> <!-- closes .modal dialogue -->
   </div> <!-- close .modal #subscribe-modal -->
   <!-- END Contact Modal -->
-  
+    
+<!-- BEGIN Powder Report Modal -->
+  <div class="modal fade" id="reportModal" tabindex="-10">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Powder Report</h2>
+        </div> <!-- close .modal-header -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="container">
+                <!-- insert data from SnoCountry weather query -->
+              </div> <!-- close container -->
+            </div> <!-- close .col-sm-12 -->
+          </div> <!-- close .row -->
+        </div> <!-- closes .modal body -->
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> <!-- close .modal content -->
+    </div> <!-- closes .modal dialogue -->
+  </div> <!-- close .modal #subscribe-modal -->
+  <!-- END Powder Report Modal -->
+
   <!-- scripts -->
   <script src="js/main.js" type="text/javascript"></script>
   <script src="js/location-bar-animations.js"></script>
