@@ -7,29 +7,30 @@ var express = require('express'),
     app = express(),
     router = express.Router();
 // load Node package for HTTP requests
-// var request = require('request');
-// load body-parser middlewear for returned JSON data
+var request = require('request');
+// load body-parser middlewear for returned JSON data, attaches data to the request object
 var bodyParser = require('body-parser'),
     parseText = bodyParser.text();
 
-router.get('/:id', function(req, res) {
-  var resortId = req.params.id;
-  res.send(resortId);
-});
+// get the requested id from the string in the URL pattern of the route (server recieves request for a route)
+// router.get('/:id', function(req, res) {
+//   var resortId = req.params.id;
+//   res.send(resortId);
+// });
 
 /*  response to POST requests on the root '/' route  */
-router.post('/', parseText, function(req, res) {
-  var SnoCountryQuery = "http:feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example" + "&ids=" + resortId + "&output=json";
+router.post('/:id', parseText, function(req, res) {
+  var SnoCountryQuery = "http://feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example" + "&ids=" + req.params.id + "&output=json";
   // make request with completed SnoCountryQuery URL
   request( SnoCountryQuery, function(error, response, body) {
     if ( !error && response.statusCode == 200 ) {
-      console.log('SnoCountry connection successful. Status code: ' + response.statusCode);
+      console.log('SnoCountry connection successful. Api.js recieved resort data.');
       // send the recieved .json file to body-parser to stringify JSON response
-      res.send(parseText(body));
+      res.send(body);
     }
     else {
       console.log(error);
-      console.log('Error reaching SnoCountry. Status code: ' + response.statusCode);
+      console.log('Error reaching SnoCountry. Status code: ' + response);
     }
   });
 });
