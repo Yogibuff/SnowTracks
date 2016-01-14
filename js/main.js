@@ -3,7 +3,7 @@
 /////////////////////
 
 // select all resorts on front end
-var resorts = document.getElementByClass("submitResort");
+var resorts = document.getElementsByClassName("submitResort");
 
 // loop through and add event listeners
 for (var i = 0; i < resorts.length; i++) {
@@ -11,10 +11,11 @@ for (var i = 0; i < resorts.length; i++) {
 }
 
 function submitResortId() {
-  var resortId = this.dataset.resortId;
+  // var resortId = this.dataset.resortId;
+  var resortId = this.getAttribute('data-resortId');
   callApi(resortId);
-  console.log(resortId);
-  // element.setAttribute("href", "resortId");
+  // debugging
+  console.log(this);
 }
 
 // new XML Http Request from the query to the API, populating the response onload (when the server responds)
@@ -26,15 +27,14 @@ function callApi(resortId) {
     // if status is good, take the response and parse, then POST
     if (xhr.status == 200) {
       response = JSON.parse(xhr.responseText);
-      populate(response);
       console.log(response);
     }
     if (xhr.status !== 200) {
-      console.log('error. check user input');
+      console.log('error. check user input. status: '+ status);
     }
   };
   // open the Express router.post function from api.js
-  xhr.open('POST', '/api/' + resortId, true);
+  xhr.open('get', '/api/' + resortId, true);
   // xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
   xhr.send(resortId);
 }

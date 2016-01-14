@@ -18,8 +18,8 @@ var bodyParser = require('body-parser'),
 //   res.send(resortId);
 // });
 
-/*  response to POST requests on the root '/' route  */
-router.post('/:id', parseText, function(req, res) {
+/*  response to Get requests on the root '/' route  */
+router.get('/:id', parseText, function(req, res) {
   var SnoCountryQuery = "http://feeds.snocountry.net/conditions.php?apiKey=SnoCountry.example" + "&ids=" + req.params.id + "&output=json";
   // make request with completed SnoCountryQuery URL
   request( SnoCountryQuery, function(error, response, body) {
