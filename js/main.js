@@ -18,16 +18,18 @@ function submitResortId() {
   console.log(this);
 }
 
-// new XML Http Request from the query to the API, populating the response onload (when the server responds)
+// new XML Http Request from the query to the API
 function callApi(resortId) {
   // used to send HTTP requests to Express server and load the response data
   var xhr = new XMLHttpRequest();
   
+  // bring the response to the front end onload (when the API server responds)
   xhr.onload = function() {
-    // if status is good, take the response and parse, then POST
+    // if status is good, take the response and parse
     if (xhr.status == 200) {
       response = JSON.parse(xhr.responseText);
       console.log(response);
+      console.log(response.items[0].id);
     }
     if (xhr.status !== 200) {
       console.log('error. check user input. status: '+ status);
@@ -39,7 +41,30 @@ function callApi(resortId) {
   xhr.send(resortId);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////
+//  Populate Front End with SnoCountry return data  //
+/////////////////////////////////////////////////////
+
+/*  Powder Report - Populate Modal  */
+//selected data values from data array within "items" object
+// var list = response.items
+
+function printlist(list) {
+  var listHTML = "<ol>";
+  // iterate through SnoCountry weather returned object with array of items 
+  for (var i = 0; i < list.length; i++) {
+    listHTML += '<li>' + list[i] + "</li>";
+  }
+  listHTML += "</ol>";
+  print(listHTML);
+}
+
+var reportModal = document.getElementById("reportModal");
+
+function print(html) {
+  document.write(html);
+}
+
 
 /*  Response Items to populate pushpins and other front-end elements
 
