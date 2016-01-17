@@ -31,6 +31,10 @@
   <div id="back-to-top">
     <a href="#top"><i class="scroll-up hvr-bounce-in fa fa-chevron-up"></i></a>
   </div>
+  <div class="view-report" data-toggle="modal" data-target="#reportModal">
+<!--     <h3>View</h3> -->
+    <h4 class="text-center view-report" id="populate-report"> Powder Report <i class="fa fa-lg fa-chevron-circle-right"></i></h4>
+  </div>
   <div class="container-fluid" id="page-container">  
   <!-- BEGIN Navbar -->
     <div id="nav-menu" class="navbar navbar-default " role="navigation">
@@ -48,7 +52,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-dropdown">
           <ul class="nav navbar-nav navbar-right">
-            <li><a class="nav-hover-style hvr-bounce-to-top" href="about-us.html">About Us</a>
+            <li><a class="nav-hover-style hvr-bounce-to-top" id="swap-jumbotron" href="#">About Us</a>
             </li>
             <li><a class="nav-hover-style hvr-bounce-to-top" id="remove-map" href="#"><i class="fa fa-map-marker"></i> Remove Map</a>
             </li>
@@ -65,18 +69,20 @@
 
     <div class="header middle-content">
       <div class="container" id="map-parent">
-        <!-- becomes visible when user clicks a State, which initializes the map generating function and displays this div -->
-        <div id="map" style="opacity: 0"></div>
-        <div class="jumbotron text-center"> <!-- becomes hidden when user selects a State -->
+        <div id="map" style="opacity: 0">
+        </div>
+        <div class="jumbotron text-center"> 
           <h1 id="site-name"><img src="images/logo-tiny.png" id="logo">
           SnowTracks</h1>
-          <h4>The <em>fastest</em> way to compare winter vacation destinations</h4>
-          <hr id="content-split">
-          <hr id="content-split">
-          <ul id="homepage-list">
-            <li><h4 class="welcome-text">Click any State below to begin!</h4></li>
-          </ul>
-          <br>
+            <div id="jumbotron-text">
+            <h4>The <em>fastest</em> way to compare winter vacation destinations</h4>
+            <hr id="content-split">
+            <hr id="content-split">
+            <ul id="homepage-list">
+              <li><h4 class="welcome-text">Click any State below to begin!</h4></li>
+            </ul>
+            <br>
+          </div>
         </div>
       </div> <!-- close .container -->
     </div> <!-- close .header -->
@@ -90,15 +96,15 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name">California</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="ca-resorts resorts locations_resorts text-center">Resorts and Activities</div>
-            <a class="submitResort" data-resortId="916004" id="heavenlySearchButton" href="https://goo.gl/maps/Z1fYLwbjT1o" target="_blank">Heavenly</a>
-            <a class="submitResort" data-resortId="916001" id="alpineMeadowsSearchButton" href="https://goo.gl/maps/QfaH3dkJ2H82" target="_blank">Alpine Meadows</a>
-            <a class="submitResort" data-resortId="916011" id="squawValleySearchButton" href="https://goo.gl/maps/zkGrtgyMgbD2" target="_blank">Squaw Valley</a>
-            <a class="submitResort" data-resortId="619002" id="mammothSearchButton" href="https://goo.gl/maps/GftQXeFNAK32" target="_blank">Mammoth</a>
+            <div class="ca-resorts resorts locations_resorts text-center">Click any Resort</div>
+            <a class="submitResort" data-resortId="916004" href="#" id="heavenlySearchButton">Heavenly</a>
+            <a class="submitResort" data-resortId="916001" href="#" id="alpineMeadowsSearchButton">Alpine Meadows</a>
+            <a class="submitResort" data-resortId="916011" href="#" id="squawValleySearchButton">Squaw Valley</a>
+            <a class="submitResort" data-resortId="619002" href="#" id="mammothSearchButton">Mammoth</a>
           </div>
         </li>
         <li class="states colorado" id="colorado">
@@ -107,11 +113,11 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name">Colorado</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <div class="resorts locations_resorts text-center">Click any Resort</div>
             <a class="submitResort" data-resortId="303023" href="#" id="tellurideSearchButton">Vail</a>
             <a class="submitResort" data-resortId="303022" href="#" id="vailSearchButton">Telluride</a>
             <a class="submitResort" data-resortId="303014" href="#" id="keystoneSearchButton">Keystone</a>
@@ -124,11 +130,11 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-mt">Montana</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <div class="resorts locations_resorts text-center">Click any Resort</div>
             <a class="submitResort" data-resortId="406002" href="#" id="bigSkySearchButton">Big Sky</a>
             <a class="submitResort" data-resortId="406003" href="#" id="bridgerBowlSearchButton">Bridger Bowl</a>
             <a class="submitResort" data-resortId="406001" href="#" id="whitefishSearchButton">Whitefish</a>
@@ -141,15 +147,15 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-nm">New Mexico</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
-            <a class="submitResort" data-resortId="505001" href="#" id="taosSkiValley">Taos Ski Valley</a>
+            <div class="resorts locations_resorts text-center">Click any Resort</div>
+            <a class="submitResort" data-resortId="505009" href="#" id="taosSkiValley">Taos Ski Valley</a>
             <a class="submitResort" data-resortId="505007" href="#" id="apache">Apache</a>
             <a class="submitResort" data-resortId="505002" href="#" id="parajito">Pajarito</a>
-            <a class="submitResort" data-resortId="505009" href="#" id="angelFire">Angel Fire</a>
+            <a class="submitResort" data-resortId="505001" href="#" id="angelFire">Angel Fire</a>
           </div>
         </li>
         <li class="states" id="utah">
@@ -158,11 +164,11 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-utah">Utah</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <div class="resorts locations_resorts text-center">Click any Resort</div>
             <a class="submitResort" data-resortId="801001" href="#" id="alta">Alta</a>
             <a class="submitResort" data-resortId="801006" href="#" id="solitude">Solitude</a>
             <a class="submitResort" data-resortId="801011" href="#" id="parkCity">Park City</a>
@@ -175,11 +181,11 @@
             <span class="locations_active"></span>
             <span class="locations_wrap">
               <span class="locations_name" id="align-vt">Vermont</span>
-              <span class="locations_resorts callReportModal" data-toggle="modal" data-target="#reportModal">Powder Report</span>
+              <span class="locations_resorts">Ski Resorts</span>
             </span>
           </a>
           <div class="locations_box">
-            <div class="resorts locations_resorts text-center">Resorts and Activities</div>
+            <div class="resorts locations_resorts text-center">Ski Resorts</div>
             <a class="submitResort" data-resortId="802007" href="#" id="killington">Killington</a>
             <a class="submitResort" data-resortId="802006" href="#" id="jaysPeak">Jay Peak</a>
             <a class="submitResort" data-resortId="802016" href="#" id="smugglersNotch">Smugglers' Notch</a>
@@ -286,19 +292,33 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h2 class="modal-title">Powder Report</h2>
+          <br>
+          <h2 class="modal-title text-center">Powder Report</h2>
         </div> <!-- close .modal-header -->
         <div class="modal-body">
           <div class="row">
             <div class="col-sm-12">
               <div class="container">
-                <!-- insert data from SnoCountry weather query -->
+                <!-- insert name of the resort selected -->
+                <h1 id="report-header"></h1>
+                <!-- insert Powder Report from SnoCountry weather query -->
+                <span><h4 class="report-subheaders">Snowfall : </h4><h4 id="snowfall modal-test"></h4></span>
+                <br>
+                <span><h4 class="report-subheaders">Today's Conditions : </h4><h4 id="conditions"></h4></span>
+                <br>
+                <span><h4 class="report-subheaders">Snow Quality : </h4><h4 id="snow-quality"></h4></span>
+                <br>
+                <span><h4 class="report-subheaders">Terrain Park Status : </h4><h4 id="terrain-park"></h4></span>
+                <br>
+                <h4 class="report-subheaders">Take a look at the Slopes</h4>
+                <i class="fa fa-lg fa-video-camera"></i> <a id="resort-cam"></a>
+                <br>
               </div> <!-- close container -->
             </div> <!-- close .col-sm-12 -->
           </div> <!-- close .row -->
         </div> <!-- closes .modal body -->
         <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning hvr-bounce-in" id="text-center" data-dismiss="modal">Close</button>
       </div> <!-- close .modal content -->
     </div> <!-- closes .modal dialogue -->
   </div> <!-- close .modal #subscribe-modal -->
@@ -309,5 +329,6 @@
   <script src="js/location-bar-animations.js"></script>
   <script src="js/event-listeners.js" type="text/javascript"></script>
   <script src="js/navbar.js" type="text/javascript"></script>
+  <script src"js/report-modal.js" type="text/javascript"></script>
 </body>
 </html>

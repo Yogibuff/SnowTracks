@@ -262,7 +262,7 @@ ul.locations_menu li a img {
 ul.locations_menu li span span.locations_name {
   color: #fff;
   font-size: 24px;
-  padding-left: 10px;
+  padding-left: 6%;
 }
 
 ul.locations_menu li span.locations_wrap {
@@ -319,7 +319,7 @@ ul.locations_menu li span span.locations_resorts {
   float: left;
   clear: both;
   font-size: 10px;
-  letter-spacing: 2px;
+  letter-spacing: 2.4px;
 }
 
 ul.locations_menu li div.locations_box {
@@ -354,7 +354,7 @@ ul.locations_menu li div.locations_box a:hover {
 ul.locations_menu li span span.locations_name,
 ul.locations_menu li span span.locations_resorts,
 ul.locations_menu li div.locations_box a {
-  margin-left: 15px;
+  margin-left: 13%;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px #000000, 1px 1px 1px #000000;
 }
@@ -408,24 +408,6 @@ div > #locations-dropdown.container {
   margin-right: 10px;
   margin-left: 10px;
 }
-
-/*.social {
-  margin: 0;
-  padding: 0;
-}
-
-.social ul {
-  margin: 0;
-  padding: 5px;
-}
-
-.spacing-social-icons {
-  margin: 4px;
-}*/
-
-/*.center-icons {
-  padding-left: 18%;
-}*/
 
 .scroll-up {
   font: normal normal normal 30px/1 FontAwesome;
@@ -506,6 +488,25 @@ div > #locations-dropdown.container {
 
 
 /* //////////// Modal Styles //////////// */
+
+.view-report {
+/* visible when a report is available */
+  opacity: 0;
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  height: 70px;
+  width: 110px;
+  margin: 0;
+  padding-top: 10px;
+  border-radius: 14px;
+  z-index: 1001;
+  color: #16C2F2;
+  background-color: rgb(51, 51, 51);
+  line-height: 24px;
+  letter-spacing: 1.6px;
+  cursor: pointer;
+}
 
 #contact-btn-align {
   padding-top: 8px  !important;
@@ -611,6 +612,15 @@ form li {
   font-weight: 600;
 }
 
+.report-subheaders {
+  padding-bottom: 5px;
+  font-style: bold;
+  font-size: 20px;
+}
+
+.report-available {
+  opacity: 0;
+}
 
 /* //////////// Custom 404 Page Styles //////////// */
 .missing-page {
@@ -637,7 +647,7 @@ form li {
   transition-duration: 0.6s;
 }
 .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
-  transform: scale(1.7);
+  transform: scale(1.4);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus, .navbar-nav>.open>a {
