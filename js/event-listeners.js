@@ -46,4 +46,7 @@ $(document.body).ready(function () {
     }, 800);
     return false;
   });
+  $('.submitResort').click(function () {
+    $('.view-report').css('opacity', '1');
+  });
 });
