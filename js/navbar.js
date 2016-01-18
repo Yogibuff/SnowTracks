@@ -2,10 +2,9 @@
 //          Navbar  Event  Listeners          //
 ////////////////////////////////////////////////
 
-/* Navbar: Hide and Show Map and Sponsors on click */
-
+/*  Navbar: "Remove Map" Hides and Shows Map  */
 $(document.body).ready(function () {
-  // Navbar: 'Remove Map' removes both text and map, show on click
+  // Navbar: "Remove Map" removes both Jumbotron and Map
   $("#remove-map").on('click', function () {
     $('#map').css('opacity', '0');
     $('.jumbotron').css('display', 'none');
@@ -14,6 +13,7 @@ $(document.body).ready(function () {
   $('#sponsors').css('opacity', '0');
 });
 
+/*  Navbar: "Sponsors" images show on click  */
 var createSponsors = function(src, sponsors) {
   var sponsors = document.getElementById("sponsors");
   var image = document.createElement('img');
@@ -21,7 +21,6 @@ var createSponsors = function(src, sponsors) {
   sponsors.appendChild(image);
 };
 
-// Navbar: 'Sponsors' images show on click
 var showSponsors = document.getElementById("show-sponsors");
 showSponsors.addEventListener("click", function() {
   if (sponsors.children.length > 1) {
@@ -38,3 +37,42 @@ showSponsors.addEventListener("click", function() {
   sponsors.style.opacity = 1;
   }
 }, false);
+
+/*  Navbar: "About Us" swaps Jumbotron text content  */
+// removes the need for about-us.html
+var jumbotronText = document.getElementById('jumbotron-text'),
+    aboutUs = document.getElementById('swap-jumbotron');
+
+var styleAboutUs = function() {
+  var lines = jumbotronText.getElementsByTagName("hr");
+  $(lines).attr("id", "content-split");
+  var aboutUsText = jumbotronText.getElementsByTagName("ul");
+  $(aboutUsText).attr("id", "about-list");
+};
+
+aboutUs.addEventListener("click", function() {
+  var jumbotronText = document.getElementById('jumbotron-text');
+  jumbotronText.innerHTML = "";
+  jumbotronText.innerHTML = "<hr><hr><ul><li><h4>Generate a Google Map instantly - no waiting!</h4></li><li><h4>View daily snow conditions submitted by the pros, accessed through the ©SnoCountry API</h4></li><li><h4>Choose from the <b>Top 4</b> Resorts within the <b>Top 6</b> States, thats <b>24 amazing options!</b></h4></li>"
+  ;
+  styleAboutUs();
+});
+
+
+
+// <hr> id="content-split"
+// <hr> id="content-split"
+// <ul> id="about-list"
+//   <li><h4>Generate a Google Map instantly - no waiting!</h4></li>
+//   <li><h4>View daily snow conditions submitted by the pros, accessed through the ©SnoCountry API</h4></li>
+//   <li><h4>Choose from the <b>Top 4</b> Resorts within the <b>Top 6</b> States, thats <b>24 amazing options!</b></h4></li>
+
+
+// "
+//     <hr id="content-split">
+//      <hr id="content-split">
+//      <ul id="about-list">
+//         <li><h4>Generate a Google Map instantly - no waiting!</h4></li>
+//         <li><h4>View daily snow conditions submitted by the pros, accessed through the ©SnoCountry API</h4></li>
+//         <li><h4>Choose from the <b>Top 4</b> Resorts within the <b>Top 6</b> States, that\'s <b>24 amazing options!</b></h4></li>
+//     "
