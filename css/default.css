@@ -38,7 +38,6 @@ ul {
   transform: translate3d(0,0,0);
 }
 
-
 /* //////////// Navbar Styles //////////// */
 
 #nav-menu {
@@ -489,6 +488,10 @@ div > #locations-dropdown.container {
 
 /* //////////// Modal Styles //////////// */
 
+#report-header {
+  padding-right: 40px;
+}
+
 .view-report {
 /* visible when a report is available */
   opacity: 0;
@@ -506,6 +509,62 @@ div > #locations-dropdown.container {
   line-height: 24px;
   letter-spacing: 1.6px;
   cursor: pointer;
+}
+
+#report-container {
+  width: 100%;
+  padding-left: 10%;
+}
+
+.report-data {
+  margin-left: 35px;
+}
+
+#modal-test {
+  margin-left: 30px;
+  width: 46%;
+  padding: 1.5%;
+  padding-left: 3%;
+  border-radius: 8px;
+}
+
+#terrain-park {
+  width: 48%;
+  border-radius: 8px;
+  padding: 1.5%;
+  padding-left: 3%;
+}
+
+#cam-fade {
+  padding-left: 15px;
+}
+
+#resort-cam {
+  height: 100%;
+  width: 100%;
+}
+
+#webcam-button {
+  background-image: url("../images/resortCam.jpg");
+  background-size: cover; 
+  height: 100px;
+  width: 140px;
+  margin-left: 35px;
+  padding-top: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.fa-video-camera {
+  padding-top: 7%;
+  padding-left: 8%;
+  opacity: 0.65;
+  font-size: 90px;
+}
+
+#modal-test, #conditions, #snow-quality, #terrain-park, {
+  width: 50%;
+  padding-left: 21px;
 }
 
 #contact-btn-align {
@@ -614,7 +673,7 @@ form li {
 
 .report-subheaders {
   padding-bottom: 5px;
-  font-style: bold;
+  font-weight: 600;
   font-size: 20px;
 }
 
@@ -652,6 +711,16 @@ form li {
 }
 .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus, .navbar-nav>.open>a {
   background-color: transparent !important;
+}
+/* resort names bounce-in */
+.locations_menu > .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+  transform: scale(1.2);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+/* Powder Report bounce in */
+.view-report > .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
+  transform: scale(1.2);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 /* navbar items - on hover create white background with rounded edges from bottom up */

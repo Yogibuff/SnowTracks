@@ -1,109 +1,140 @@
+  ///////////////////////
+ //  Event listeners  //
 ///////////////////////
-//  Event listeners  //
-/////////////////////
 
-// select all resorts on front end
 var resorts = document.getElementsByClassName("submitResort");
 
-// loop through and add event listeners
-for (var i = 0; i < resorts.length; i++) {
-  resorts[i].addEventListener("click", submitResortId);
-}
-
 function submitResortId() {
-  // var resortId = this.dataset.resortId;
   var resortId = this.getAttribute('data-resortId');
   callApi(resortId);
 }
 
-// new XML Http Request from the query to the API
+// iterate through resorts, add event listeners so each sends correct query URL to SnowCountry API
+for (var i = 0; i < resorts.length; i++) {
+  resorts[i].addEventListener("click", submitResortId);
+}
+
+// new XML Http Request to retrieve data from SnoCountry API
 function callApi(resortId) {
-  // used to send HTTP requests to Express server and load the response data
+  // send HTTP requests to Express server and load the response data
   var xhr = new XMLHttpRequest();
-  
-  // bring the response to the front end onload (when the API server responds)
+  // bring the response to the front-end onload (when the API server responds)
   xhr.onload = function() {
-    // if status is good, take the response and parse
+    // if status is good, take the API response and parse into JSON
     if (xhr.status == 200) {
       response = JSON.parse(xhr.responseText);
+      
       // returned data 
       var weatherData = response.items[0];
-      console.log(response.items[0]);
-
-      // clear Powder Report modal, then re-populate with data from the most recently clicked resort
       var viewReport = document.getElementById("populate-report");
-
+      
+      ///////////////////////////////////////////////////////
+      //  Populate Front End with SnoCountry return data  //
+      /////////////////////////////////////////////////////
+      
+      // Powder report opens modal and populates with the most recently recieved SnoCountry data
       viewReport.addEventListener("click", function() {
-        // var modalTest = document.getElementById("modalTest");
-        // if (modalTest.length > 1) {
-        //   var reportHeader = document.getElementById("report-header"),
-        //       conditions = document.getElementById("conditions"),
-        //       snowQuality = document.getElementById("snow-quality"),
-        //       terrainParkContent = document.getElementById("terrain-park"),
-        //       resortCam = document.getElementById("resort-cam");
-        //   resortCam.innerHTML = "";
-        //   reportHeader.innerHTML = "";
-        //   conditions.innerHTML = "";
-        //   snowQuality.innerHTML = "";
-        //   terrainParkContent.innerHTML = "";
-        // }
-        // return terrain park status, unless the length of the string is less than 1 - then put n/a
-        var terrainPark = weatherData.terrainParkOpen;
-        var terrainParkStatus = function() {
-          if (terrainPark.length < 1) {
-            return "n/a";
+
+        // test resort name, if data already exists, clear fields
+        var reportHeader = document.getElementById("report-header").value;
+        var checkHeader = function() {  
+          if (reportHeader === weatherData.resortName) {
+            // if the requested data matches currently displayed data, do nothing
+            return;
           }
           else {
-            return terrainParkStatus;
+            var conditions = document.getElementById("conditions"),
+                snowQuality = document.getElementById("snow-quality"),
+                terrainParkContent = document.getElementById("terrain-park"),
+                resortCam = document.getElementById("resort-cam");
+                snowfall = document.getElementById("modal-test");
+            document.getElementById("report-header").innerHTML = "";
+            snowfall.innerHTML = "";
+            conditions.innerHTML = "";
+            snowQuality.innerHTML = "";
+            terrainParkContent.innerHTML = "";
+            resortCam.innerHTML = "";
           }
         };
+        checkHeader();
 
-        // insert resort name before existing content
-        $("#report-header").prepend(weatherData.resortName);
-
-        // return recent snow in inches, if < 1 inch, put "0"
-        var showRecentSnow = function() {
+        var populateReport = function() {
+          // insert resort name
+          $("#report-header").prepend(weatherData.resortName);
+          
+          // display recent inches of snowfall
           var recentSnow = weatherData.snowLast48Hours;
-          if (recentSnow.value < 1) {
-            return "0";
-          }
-          if (recentSnow.value <= 2) {
-            // 0 - 2 inches is colored in red for a poor powder report
-            $("#snowfall").css("background-color", "rgba(225, 29, 33, 0.7)");
-          }
-            // 3 - 4 inches is colored in orange for passable condtions
-          if (recentSnow.value > 2 && recentSnow.value <= 4) {
-            $("#snowfall").css("background-color", "rgba(235, 118, 32, 0.7)");
-          }
-            // 6 - 7 inches is colored in yellow for decent conditions
-          if (recentSnow.value > 5 && recentSnow.value <= 7) {
-            $("#snowfall").css("background-color", "rgba(251, 202, 4, 0.67)");
-          }
-            // 8 or more inches is green for excellent conditions
-          if (recentSnow.value > 8) {
-            $("#snowfall").css("background-color", "rgba(57,152,0,0.6)");
-          }
-          else {
-            return recentSnow;
-          }
+          var showRecentSnow = function() {
+            var recentSnow = response.items[0].snowLast48Hours,
+                snowfall = $("#modal-test");
+            if (recentSnow !== snowfall) {
+              snowfall.innerHTML = "";
+            }
+            if (recentSnow < 1 || recentSnow === null) {
+              $("#modal-test").css("background-color", "rgba(225, 29, 33, 0.7)");
+              return "0";
+            }
+            if (recentSnow <= 2) {
+              // 0 - 2 inches is colored in red for a poor powder report
+              $("#modal-test").css("background-color", "rgba(225, 29, 33, 0.7)");
+              return recentSnow;
+            }
+              // 3 - 4 inches is colored in orange for passable condtions
+            if ((recentSnow > 2) && (recentSnow <= 4)) {
+              $("#modal-test").css("background-color", "rgba(235, 118, 32, 0.7)");
+              return recentSnow;
+            }
+              // 6 - 7 inches is colored in yellow for decent conditions
+            if ((recentSnow > 5) && (recentSnow <= 7)) {
+              $("#modal-test").css("background-color", "rgba(251, 202, 4, 0.67)");
+              return recentSnow;
+            }
+              // 8 or more inches is green for excellent conditions
+            if (recentSnow > 8) {
+              $("#modal-test").css("background-color", "rgba(57,152,0,0.6)");
+              return recentSnow;
+            }
+            // if there is no change, do nothing
+            else {
+              return;
+            }
+          };
+
+          // insert inches of snowfall (number value)
+          $("#modal-test").append(showRecentSnow).append(" inches of new snowfall");
+
+          // insert today's weather description (sentence)
+          $("#conditions").append(weatherData.weatherToday_Condition);
+
+          // insert surfact conditon (snow description in a few words)
+          $("#snow-quality").append(weatherData.primarySurfaceCondition);
+
+          // return terrain park status, unless the length of the string is less than 1 - then put n/a
+          var terrainParkStatus = function() {
+            var terrainPark = response.items[0].terrainParkOpen,
+                activeParkStatus = document.getElementById("terrain-park");
+            // if the same park is called, do nothing; if terrain park data does not exist, print "n/a"; if they do not match print new
+            if (terrainPark !== activeParkStatus) {
+            }
+            if ((terrainPark.length < 1) || (terrainPark == "no")) {
+              $("#terrain-park").css("background-color", "rgba(225, 29, 33, 0.7)");
+              return "Terrain Park not available";
+            }
+            if (terrainPark == "yes") {
+              $("#terrain-park").css("background-color", "rgba(57,152,0,0.6)");
+              return "Terrain Park is OPEN!";
+            }
+            else {
+              return;
+            }
+          };
+          // insert status of the resort's terrain park (open / closed)
+          $("#terrain-park").append(terrainParkStatus);
+          
+          // insert resort webcam URL as href property of the webcam button
+          $("#resort-cam").prop('href', weatherData.webCamLink);
         };
-
-        // insert inches of snowfall (number value)
-        $("#snowfall").append(showRecentSnow).append(" inches of new snowfall");
-        // console.log(response.items[0].snowLast48Hours);
-        // console.log(response.items[0].lastSnowFallDate);
-
-        // insert today's weather description (sentence)
-        $("#conditions").append(weatherData.weatherToday_Condition);
-
-        // insert surfact conditon (snow description in a few words)
-        $("#snow-quality").append(weatherData.primarySurfaceCondition);
-
-        // insert status of the resort's terrain park (open / closed)
-        $("#terrain-park").append(weatherData.terrainParkOpen);
-        
-        // insert webcam of resort
-        $("#resort-cam").append(weatherData.webCamLink);
+        populateReport();
       }, false);
     }
     if (xhr.status !== 200) {
@@ -116,9 +147,7 @@ function callApi(resortId) {
   xhr.send(resortId);
 }
 
-///////////////////////////////////////////////////////
-//  Populate Front End with SnoCountry return data  //
-/////////////////////////////////////////////////////
+
 
 /*  Powder Report - Populate Modal  */
 //selected data values from data array within "items" object

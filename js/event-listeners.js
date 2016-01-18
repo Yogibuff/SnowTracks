@@ -47,6 +47,6 @@ $(document.body).ready(function () {
     return false;
   });
   $('.submitResort').click(function () {
-    $('.view-report').css('opacity', '1');
+    $('.view-report').css('opacity', '1').animate(fadeIn);
   });
 });
