@@ -39,7 +39,6 @@ ul {
 }
 
 /* //////////// Navbar Styles //////////// */
-
 #nav-menu {
   background-color: rgba(231, 231, 231, 0);
   z-index: 5;
@@ -104,9 +103,7 @@ ul {
   background: linear-gradient(to bottom, rgba(231, 231, 231, 1) 0%, rgba(51, 122, 183, 1) 100%);
 }
 
-
 /* //////////// Jumbotron Styles //////////// */
-
 .jumbotron {
   /*max-width: 1100px;*/
   max-width: 700px;
@@ -209,9 +206,7 @@ hr + hr {
   cursor: pointer;
 }
 
-
 /* //////////// Location Menu Styles //////////// */
-
 ul.locations_menu {
   margin: 0;
   padding: 0;
@@ -370,9 +365,7 @@ div > #locations-dropdown.container {
   margin-bottom: 10px;
 }
 
-
 /* //////////// Sponsors Styles //////////// */
-
 #sponsors {
   width: 100%;
   height: 112px;
@@ -389,9 +382,7 @@ div > #locations-dropdown.container {
   padding-left: 10px;
 }
 
-
 /* //////////// Footer and Social Media Styles //////////// */
-
 .footer {
   height: 30px;
   font-weight: 700;
@@ -464,29 +455,27 @@ div > #locations-dropdown.container {
 .social .fa-facebook:hover {
   background: #4060A5;
 }
-
 .social .fa-twitter:hover {
   background: #00ABE3;
 }
-
 .social .fa-google-plus:hover {
   background: #e64522;
 }
-
 .social .fa-github:hover {
   background: #343434;
 }
-
 .social .fa-linkedin:hover {
   background: #0094BC;
 }
-
 #footer-left, #footer-top-link {
   padding-top: 12px;
 }
 
-
 /* //////////// Modal Styles //////////// */
+#report-modal-header {
+  padding-top: 0 !important;
+  padding-bottom: 10px;
+}
 
 #report-header {
   padding-right: 40px;
@@ -629,14 +618,12 @@ label {
   text-align: right;
 }
 
-label + input,
-label + select {
+label + input, label + select {
   width: 60%;
   margin: 0 10% 0 0%
 }
 
-input + input,
-select {
+input + input, select {
   float: right;
 }
 
@@ -691,11 +678,9 @@ form li {
   padding-left: 0;
   padding-right: 0;
 }
-
 .no-background {
   background-image: none  !important;
 }
-
 
 /* //////////// Button Animations //////////// */
 
@@ -754,7 +739,6 @@ form li {
   transform: scaleY(1);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
-
 
 /* //////////// Media Queries //////////// */
 
@@ -815,21 +799,17 @@ form li {
   .jumbotron > h1, .jumbotron > h4 {
     text-shadow: none;
   }
-  
   .jumbotron #logo {
     max-height: 70px  !important;
   }
-
   .jumbotron > #site-name {
     font-size: 45px;
   }
-
   div > #locations_menu {
     display: block;
     margin: 0 auto;
     padding-left: 5px;
   }
-  
   #home-summary {
     display: visible !important;
   }
@@ -838,11 +818,9 @@ form li {
   ul.locations_menu li {
     margin: 85px !important;
   }
-  
   div > #locations-dropdown.container {
     padding-left: 0 !important;
   }
-  
   #map {
     width: auto;
     max-width: 600px;
